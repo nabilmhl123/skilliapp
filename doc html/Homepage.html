@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillijob</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap">
+    <style>
+      
+/* ===========================================
+   CSS VARIABLES
+   =========================================== */
+:root {
+  /* Couleurs Principales */
+  --primary: #6C00FF;        /* Violet principal */
+  --primary-2: #6334AF;      /* Violet foncé */
+  --secondary: #F59E0B;      /* Orange/Or */
+  --secondary-2: #EAB308;    /* Jaune doré */
+
+  /* Couleurs Neutres */
+  --bg: #F8FAFC;            /* Fond page (gris très clair) */
+  --text: #1F2937;          /* Texte principal (gris foncé) */
+  --muted: #6B7280;         /* Texte secondaire (gris moyen) */
+  --line: #E5E7EB;          /* Bordures/séparateurs */
+  --white: #ffffff;         /* Blanc pur */
+
+  /* Couleurs Spéciales */
+  --ring: #DDCCFF;          /* Accent hover (violet clair) */
+  --card-shadow: 0 10px 30px rgba(108,0,255,0.08);  /* Ombre cartes */
+
+  /* Espacements & Rayons */
+  --radius: 20px;           /* Border radius standard */
+}
+
+/* ===========================================
+   RESET AND BASE STYLES
+   =========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ===========================================
+   TYPOGRAPHY
+   =========================================== */
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.social-proof {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+/* ===========================================
+   NAVIGATION
+   =========================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-brand .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-brand .logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img:hover {
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: var(--primary);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+.navbar-cta {
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+  color: var(--white);
+  box-shadow: 0 6px 24px rgba(139,92,246,.35);
+  border-radius: 30px;
+  padding: 1rem 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  border: none;
+  cursor: pointer;
+  transition: .2s ease;
+  font-size: 0.9rem;
+}
+
+.navbar-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(139,92,246,.5);
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar.scrolled {
+  background: var(--white);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================================
+   HERO SECTION
+   =========================================== */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 80px;
+  color: var(--white);
+}
+
+.hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 24px;
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+.hero .subtitle {
+  color: #F3F4F6;
+  margin-bottom: 32px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.hero .social-proof {
+  color: #EAF0F6;
+  margin-bottom: 40px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 20px;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.placeholder-content {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.placeholder-content span {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.placeholder-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ===========================================
+   PROBLEM & SOLUTION SECTION
+   =========================================== */
+.problem-solution-section {
+  padding: 120px 0;
+}
+
+.problem-solution-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.problem-part {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.problem-part h2 {
+  color: #6C00FF;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  position: relative;
+}
+
+.problem-part h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+.hook-subtitle {
+  color: #6C00FF;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.problem-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+}
+
+.problem-text {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.problem-text h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.problem-text p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.solution-transition {
+  text-align: center;
+}
+
+.solution-intro {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 40px 0 30px;
+  text-align: center;
+}
+
+.solution-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.solution-list li {
+  color: var(--text);
+  font-size: 1.15rem;
+  padding: 12px 25px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  position: relative;
+  padding-left: 55px;
+}
+
+.solution-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 25px;
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.solution-quote {
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+  text-align: center;
+}
+
+.solution-part {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 80px 0;
+  border-radius: 40px;
+  margin-top: 80px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.solution-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.solution-header h2 {
+  color: var(--white);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.solution-slogan {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.solution-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 70px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution-block {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.solution-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.solution-block h3 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.solution-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.solution-block li {
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.solution-block li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.sectors-banner {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.sectors-banner p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.sectors-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sector-tag {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sector-tag:hover {
+  background: var(--white);
+  color: var(--primary-2);
+}
+
+/* ===========================================
+   COMPONENTS
+   =========================================== */
+
+/* Blocks */
+.blocks {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.block {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid transparent;
+  box-shadow: var(--card-shadow);
+  transition: .25s;
+  text-align: left;
+}
+
+.block:hover {
+  transform: translateY(-4px);
+  border-color: var(--ring);
+  box-shadow: 0 15px 40px rgba(108,0,255,.15);
+}
+
+.block h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.block p {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+/* Buttons */
+.cta-button {
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  cursor: pointer;
+  transition: .2s ease;
+  font-size: 0.9rem;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+  color: var(--white);
+  box-shadow: 0 6px 24px rgba(139,92,246,.35);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(139,92,246,.5);
+}
+
+.cta-button.secondary {
+  background: linear-gradient(45deg, var(--secondary), var(--secondary-2));
+  color: var(--white);
+}
+
+.cta-button.secondary:hover {
+  transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  text-align: center;
+  margin-top: 40px;
+  border: 2px solid transparent;
+  box-shadow: var(--card-shadow);
+  transition: .25s;
+}
+
+.contact:hover {
+  transform: translateY(-4px);
+  border-color: var(--ring);
+  box-shadow: 0 15px 40px rgba(108,0,255,.15);
+}
+
+.contact .icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+.contact a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  color: var(--primary-2);
+}
+
+/* ===========================================
+   GENERIC SECTIONS
+   =========================================== */
+.section {
+  padding: 100px 0;
+}
+
+.section-header.center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.section .muted {
+  color: var(--muted);
+}
+
+/* Grids */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 50px 40px;
+  border: 3px solid var(--line);
+  box-shadow: 0 15px 40px rgba(108,0,255,0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(108,0,255,0.25);
+  border-color: var(--primary);
+}
+
+.dynamic-card {
+  background: linear-gradient(135deg, #FEF7F7 0%, #FFFFFF 100%);
+}
+
+.dynamic-card:nth-child(2) {
+  background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+}
+
+.card-header {
+  margin-bottom: 25px;
+}
+
+.card-label {
+  color: var(--primary);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 15px rgba(108,0,255,0.4);
+}
+
+.card-content p {
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin: 0 0 25px 0;
+  text-align: left;
+}
+
+.card-cta {
+  margin-top: 20px;
+}
+
+/* Solution Transition */
+.solution-transition {
+  background: linear-gradient(135deg, #F9F8FF 0%, #F0F0FF 100%);
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg, var(--primary), var(--secondary)) 1;
+  border-radius: 35px;
+  padding: 60px 50px;
+  text-align: center;
+  margin-top: 80px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(108,0,255,0.15);
+  overflow: hidden;
+}
+
+.solution-transition::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(108,0,255,0.05) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.transition-content {
+  position: relative;
+  z-index: 1;
+}
+
+.transition-content h3 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.transition-content p {
+  color: var(--text);
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.solution-features {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.solution-features li {
+  background: var(--white);
+  padding: 20px 25px;
+  border-radius: 20px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 25px rgba(108,0,255,0.1);
+  border: 1px solid rgba(108,0,255,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.solution-features li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(108,0,255,0.2);
+  border-color: var(--primary);
+}
+
+.solution-features li::before {
+  content: "✓";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary);
+  color: var(--white);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.solution-quote {
+  font-style: italic;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  line-height: 1.4;
+  position: relative;
+}
+
+.solution-quote::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--secondary);
+  position: absolute;
+  left: -30px;
+  top: -10px;
+}
+
+.solution-quote::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--secondary);
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+}
+
+/* Solution blocks */
+.solution {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: var(--white);
+  padding: 100px 0;
+}
+
+.solution .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.solution .section-header h2 {
+  color: var(--white);
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.solution .solution-slogan {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.solution-text {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: var(--white);
+}
+
+.solution-text p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.solution-text strong {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.solution-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* Sectors Section */
+.sectors {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sectors::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(108,0,255,0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(245,158,11,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.sectors-content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectors-header {
+  margin-bottom: 50px;
+}
+
+.sectors-header h2 {
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectors-subtitle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.sectors-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.sector-tag {
+  background: var(--white);
+  color: var(--primary);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108,0,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.sector-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(108,0,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.sector-tag:hover::before {
+  left: 100%;
+}
+
+.sector-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(108,0,255,0.15);
+  border-color: rgba(108,0,255,0.2);
+  background: linear-gradient(135deg, rgba(108,0,255,0.05), rgba(108,0,255,0.02));
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+.footer {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: #ffffff;
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(245,158,11,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.footer-brand img:hover {
+  filter: brightness(0) invert(1) saturate(1.2);
+}
+
+.footer-brand p {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-nav, .footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav a, .footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-nav a:hover, .footer-contact a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: .95rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom .legal {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-bottom .legal a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom .legal a:hover {
+  color: var(--secondary);
+}
+
+/* ===========================================
+   CHATBOT
+   =========================================== */
+.chatbot-bubble {
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chatbot-logo {
+  width: 80px;
+  height: 80px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.chatbot-bubble:hover .chatbot-logo {
+  transform: scale(1.1);
+}
+
+.chatbot-tooltip {
+  position: absolute;
+  bottom: 85px;
+  right: -10px;
+  opacity: 0;
+  transform: translateY(15px) scale(0.9);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  animation: tooltipPulse 4s ease-in-out infinite;
+  z-index: 1000;
+}
+
+.tooltip-content {
+  background: #ffffff;
+  color: var(--primary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tooltip-text {
+  color: var(--primary);
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.chatbot-bubble:hover .chatbot-tooltip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation-play-state: paused;
+}
+
+#chatbotWidget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 420px;
+  height: 650px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(108,0,255,0.15), 0 0 0 1px rgba(108,0,255,0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+#chatbotWidget::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 20px;
+}
+
+.header-spacer {
+  flex: 1;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.status {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  display: block;
+  margin-top: 2px;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.chatbot-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: headerGlow 4s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chatbot-header button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+.chatbot-header button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: rotate(90deg);
+}
+
+.chatbot-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+  position: relative;
+  height: calc(100% - 50px);
+}
+
+.welcome-message {
+  padding: 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(108, 0, 255, 0.1);
+}
+
+.message-bubble {
+  max-width: 80%;
+  margin-bottom: 12px;
+  animation: messageSlideIn 0.5s ease-out;
+}
+
+.message-bubble.bot {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.message-bubble.bot .message-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 4px 12px rgba(108, 0, 255, 0.15);
+}
+
+.message-time {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 4px;
+  display: block;
+  margin-left: 16px;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.quick-btn {
+  background: white;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(108, 0, 255, 0.1);
+}
+
+.quick-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(108, 0, 255, 0.2);
+}
+
+.chatbot-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 20px 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.chatbot-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(108,0,255,0.1);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+  z-index: 1;
+  display: none;
+}
+
+.chatbot-content.loading::before {
+  display: block;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes messageSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tooltipPulse {
+  0%, 100% {
+    transform: translateY(15px) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(8px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pensiveRotate {
+  0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+  25% { transform: translateY(-6px) rotateZ(-2deg); }
+  50% { transform: translateY(-8px) rotateZ(2deg); }
+  75% { transform: translateY(-6px) rotateZ(-2deg); }
+}
+
+@keyframes bounceInvite {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(108, 0, 255, 0.2), inset 0 0 0 0 rgba(108, 0, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(108, 0, 255, 0.4), inset 0 0 0 2px rgba(108, 0, 255, 0.5);
+  }
+}
+
+.bubble-icon {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: white;
+  box-shadow: 0 4px 16px rgba(108, 0, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: bounceInvite 1.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite, glowPulse 2s ease-in-out infinite;
+}
+
+.chatbot-bubble:hover .bubble-icon {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(108, 0, 255, 0.3);
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* ===========================================
+   EFFECTS
+   =========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+  transition: .6s ease;
+}
+
+/* ===========================================
+   MEDIA QUERIES
+   =========================================== */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-link {
+    padding: 0.5rem 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-cta {
+    margin: 0.5rem 20px;
+    text-align: center;
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .blocks {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .block {
+    flex: 1;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .problem-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .solution-blocks {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .card {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 140px 0 60px;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-top: 20px;
+  }
+  .hero .subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-buttons .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .hero-image {
+    display: none;
+  }
+  .image-placeholder {
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .problem-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .solution-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .solution-slogan {
+    font-size: 1.3rem;
+  }
+
+  .problem-block,
+  .solution-block {
+    padding: 30px 20px;
+  }
+
+  .solution-highlight {
+    padding: 30px 20px;
+  }
+
+  .sectors-banner {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .block {
+    padding: 30px 20px;
+  }
+  .contact {
+    padding: 30px 20px;
+  }
+}
+
+/* Responsive sectors */
+@media (max-width: 768px) {
+  .sectors {
+    padding: 80px 0;
+  }
+
+  .sectors-header h2 {
+    font-size: 2rem;
+  }
+
+  .sectors-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .sectors-tags {
+    gap: 12px;
+  }
+
+  .sector-tag {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectors-tags {
+    gap: 10px;
+  }
+
+  .sector-tag {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ajustements responsives */
+@media (max-width: 980px) {
+  .ps-callout { grid-template-columns: 56px 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-bottom span {
+    text-align: center;
+  }
+
+  .footer-bottom .legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-brand img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-brand img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Responsive chatbot */
+@media (max-width: 480px) {
+  #chatbotWidget {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 100px);
+    bottom: 10px;
+    right: 10px;
+    border-radius: 16px;
+  }
+
+  #chatbotBtn {
+    bottom: 10px;
+    right: 10px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .chatbot-header {
+    padding: 16px 20px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .chatbot-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive tooltip */
+@media (max-width: 768px) {
+  .chatbot-tooltip {
+    bottom: 90px;
+    right: -15px;
+  }
+
+  .tooltip-content {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+
+  .tooltip-emoji {
+    font-size: 16px;
+  }
+}
+
+    </style>
+
+</head>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+               <img src="./Logo_fond_blanc_skillijob-removebg-preview.png" alt="Skillijob Logo" width="100px" height="100px">
+            </div>
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="./Landing_Page_Final_Candidat.html" class="navbar-link">Candidats</a>
+                <a href="./Landing_Page_Final_Entreprise_modals.html" class="navbar-link">Entreprises</a>
+                <button class="cta-button secondary navbar-cta">📞 09 70 19 67 02</button>
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Trouvez</br> Recrutez</br> Connectez</h1>
+                    <p class="subtitle">Candidats, accédez à des offres réelles. Entreprises, découvrez des profils disponibles. Choisissez votre espace et démarrez gratuitement.</p>
+                    <p class="social-proof">Déjà +100 entreprises partenaires | +3 000 profils candidats activés | 95% de satisfaction utilisateur</p>
+                    <div class="hero-buttons">
+                         <a href="./Landing_Page_Final_Candidat.html" <button class="cta-button primary">Je suis un candidat</button></a>
+                        <a href="./Landing_Page_Final_Entreprise_modals.html" <button class="cta-button secondary">Je suis une entreprise</button></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./Image Home Page Skillijob.png" alt="Skillijob Hero Image" class="hero-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+SECTION : PROBLÈME / CONTEXTE
+========================== -->
+<section class="section problem-now" id="contexte">
+  <div class="container">
+    <header class="section-header center">
+      <h2>Parce que le recrutement actuel ne fonctionne plus</h2>
+      <p class="hook-subtitle">On remet l’humain et l’efficacité au cœur du process.</p>
+    </header>
+
+    <div class="two-col">
+      <!-- Bloc Candidats -->
+      <article class="card glass dynamic-card">
+        <div class="card-header">
+          <span class="card-label">Candidats</span>
+        </div>
+        <div class="card-content">
+          <p>
+            <strong>Vous postulez sans relâche,</strong> mais les réponses se font attendre. Le doute s'installe,
+            l'abandon guette, et vous acceptez des postes par défaut. <em>Vos compétences restent invisibles</em>,
+            votre potentiel inexploité. Il est temps de changer cela !
+          </p>
+          <div class="card-cta">
+             <a href="./Landing_Page_Final_Candidat.html" <button class="cta-button primary">Je suis un candidat</button> </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bloc Entreprises -->
+      <article class="card glass dynamic-card">
+        <div class="card-header">
+          <span class="card-label">Entreprises</span>
+        </div>
+        <div class="card-content">
+          <p>
+            <strong>Vos annonces s'accumulent,</strong> les CV défilent sans conviction, les entretiens s'éternisent.
+            Vos équipes souffrent, votre production chute. <em>Un recrutement raté coûte cher</em> – jusqu'à
+            <strong>15 000 €</strong> et plus. Arrêtez les pertes, trouvez les talents qu'il vous faut !
+          </p>
+          <div class="card-cta">
+             <a href="./Landing_Page_Final_Entreprise_modals.html" <button class="cta-button secondary">Je suis une entreprise</button> </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="solution-transition reveal">
+      <div class="transition-content">
+        <h3>Chez Skillijob, on a décidé de casser ce schéma inefficace.</h3>
+        <p>Nous avons créé un système direct, humain, et rapide :</p>
+        <ul class="solution-features">
+          <li>Des profils déjà validés et motivés</li>
+          <li>Des offres d'emploi concrètes</li>
+          <li>Une connexion facilitée entre entreprises & talents terrain</li>
+        </ul>
+        <p class="solution-quote">Skillijob est différent : nous ne vendons pas des CV. Nous mettons en relation des humains, prêts à travailler ensemble.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+SECTION : NOTRE SOLUTION
+========================== -->
+<section class="section solution" id="solution">
+  <div class="container">
+    <header class="section-header center">
+      <h2>Notre solution pour vous ?</h2>
+      <p class="solution-slogan">Plus simple. Plus humain. Plus efficace.</p>
+    </header>
+
+    <div class="solution-text">
+      <p><strong>Pour les candidats :</strong> Des offres réelles, un contact direct avec les recruteurs, un profil gratuit, confidentiel et activable en 2 min.</p>
+      <p><strong>Pour les entreprises :</strong> Accès immédiat à des candidats disponibles, profils validés RH & motivés, recrutement rapide & gain de temps.</p>
+      <div class="solution-ctas">
+        <a href="./Landing_Page_Final_Candidat.html"<button class="cta-button primary">Je suis un candidat</button></a>
+        <a href="./Landing_Page_Final_Entreprise_modals.html" <button class="cta-button secondary">Je suis une entreprise</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+SECTION : SECTEURS
+========================== -->
+<section class="section sectors" id="secteurs">
+  <div class="container">
+    <div class="sectors-content reveal">
+      <div class="sectors-header">
+        <h2>Présent dans 8 secteurs d'activité</h2>
+        <p class="sectors-subtitle">Nous accompagnons les entreprises et talents dans tous les domaines clés de l'économie française</p>
+      </div>
+
+      <div class="sectors-tags">
+        <span class="sector-tag">Industrie</span>
+        <span class="sector-tag">Logistique</span>
+        <span class="sector-tag">Transport</span>
+        <span class="sector-tag">Tertiaire</span>
+        <span class="sector-tag">BTP</span>
+        <span class="sector-tag">Santé</span>
+        <span class="sector-tag">Restauration</span>
+        <span class="sector-tag">Automobile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================
+FOOTER
+========================== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <!-- Brand Section -->
+    <div class="footer-brand">
+      <img src="./Logo_fond_blanc_skillijob-removebg-preview.png" alt="Skillijob" width="100" height="100">
+    </div>
+
+    <!-- Navigation Section -->
+    <nav class="footer-nav">
+      <a href="./Landing_Page_Final_Candidat.html">Candidats</a>
+      <a href="./Landing_Page_Final_Entreprise_modals.html">Entreprises</a>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class="footer-contact">
+      <a class="phone" href="tel:+33970196702">📞 09 70 19 67 02</a>
+      <a class="mail" href="mailto:hello@skillijob.com">✉️ contact@skillijob.com</a>
+      <p>📍 Rue François 1er, 75008 Paris</p>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="footer-socials">
+      <div class="socials" style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="https://www.instagram.com/skillijob/" target="_blank" rel="noopener noreferrer" class="soc" style="width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); color: #fff; font-weight: 800; text-decoration: none; transition: all 0.3s ease;">
+          <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; display: block; fill: #fff;">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.3-1.3a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0z"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@skillijob" target="_blank" rel="noopener noreferrer" class="soc" style="width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); color: #fff; font-weight: 800; text-decoration: none; transition: all 0.3s ease;">
+          <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; display: block; fill: #fff;">
+            <path d="M21 8.5a7.5 7.5 0 0 1-5.2-2.1v7.58a6.47 6.47 0 1 1-6.47-6.47c.39 0 .77.04 1.13.12v2.34a3.98 3.98 0 1 0 2.71 3.79V2h2.36c.19 1.07.73 2.06 1.53 2.86A5.1 5.1 0 0 0 21 6.19z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/skillijob/" target="_blank" rel="noopener noreferrer" class="soc" style="width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); color: #fff; font-weight: 800; text-decoration: none; transition: all 0.3s ease;">
+          <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; display: block; fill: #fff;">
+            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3.5 9h3v12h-3V9zm7 0h2.87v1.64h.04c.4-.76 1.38-1.56 2.85-1.56 3.05 0 3.62 2.01 3.62 4.63V21h-3v-6.17c0-1.47-.03-3.36-2.05-3.36-2.05 0-2.36 1.6-2.36 3.25V21h-3V9z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Skillijob. Tous droits réservés.</span>
+  </div>
+</footer>
+
+
+    <!-- Bubble pensif avec tooltip -->
+    <div class="chatbot-bubble" id="chatbot-bubble">
+        <div class="bubble-icon">
+            <img src="./Logo_fond_blanc_skillijob-removebg-preview.png" alt="Skillijob Chat" class="chatbot-logo">
+        </div>
+        <div class="chatbot-tooltip">
+            <div class="tooltip-content">
+                <span class="tooltip-text">Besoin d'aide ?</span>
+            </div>
+            <div class="tooltip-arrow"></div>
+        </div>
+    </div>
+
+    <!-- Container du chatbot -->
+    <div id="chatbotWidget" class="hidden">
+        <div class="chatbot-header">
+            <div class="header-spacer"></div>
+            <button onclick="closeChatbot()">✕</button>
+        </div>
+        <div class="chatbot-content">
+            <!-- Votre formulaire Jotform en iframe -->
+            <iframe id="jotformIframe" src="https://eu.jotform.com/agent/0199ec4163ab79a9bd33b9051da28fb25505"
+                frameborder="0" width="100%" height="600"></iframe>
+        </div>
+    </div>
+
+    <script>
+            // Navbar functionality
+const navbar = document.querySelector('.navbar');
+const navbarToggle = document.getElementById('navbar-toggle');
+const navbarMenu = document.getElementById('navbar-menu');
+
+// Toggle mobile menu
+navbarToggle.addEventListener('click', () => {
+    navbarMenu.classList.toggle('active');
+    navbarToggle.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.navbar-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        navbarToggle.classList.remove('active');
+    });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Close mobile menu on window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navbarMenu.classList.remove('active');
+        navbarToggle.classList.remove('active');
+    }
+});
+
+function selectRole(role) {
+    alert('Vous avez sélectionné : ' + role);
+    // Ici, vous pouvez ajouter une redirection ou une logique supplémentaire
+}
+
+// ---- année dynamique footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ---- smooth scroll sur liens internes (si pas déjà géré)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ---- effet reveal au scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('in-view');
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal, .solution-block, .sectors-banner, .sectors-content').forEach(el => io.observe(el));
+
+const chatBubble = document.getElementById('chatbot-bubble');
+const chatWindow = document.getElementById('chatbotWidget');
+const closeBtn = document.querySelector('.chatbot-header button');
+const tooltip = document.querySelector('.chatbot-tooltip');
+
+// Ouvrir le chatbot
+chatBubble.addEventListener('click', () => {
+    chatWindow.classList.remove('hidden');
+    chatBubble.style.display = 'none'; // Masquer la bulle quand le chatbot est ouvert
+});
+
+// Fermer le chatbot
+closeBtn.addEventListener('click', () => {
+    chatWindow.classList.add('hidden');
+    chatBubble.style.display = 'flex'; // Réafficher la bulle quand le chatbot est fermé
+});
+
+// Fonction pour envoyer des messages rapides
+function sendQuickMessage(message) {
+    // Ici, vous pouvez intégrer avec votre système de chat
+    // Pour l'instant, on affiche juste une alerte
+    alert('Message envoyé : ' + message);
+
+    // Vous pouvez aussi déclencher l'ouverture du formulaire Jotform
+    // ou envoyer le message à votre système de chat
+}
+
+// Masquer le tooltip après quelques secondes
+setTimeout(() => {
+    if (tooltip) {
+        tooltip.style.animation = 'none';
+        tooltip.style.opacity = '0';
+        tooltip.style.transform = 'translateY(10px) scale(0.8)';
+    }
+}, 8000); // 8 secondes
+
+// Réactiver le tooltip au scroll
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (tooltip && chatBubble.style.display !== 'none') {
+        tooltip.style.animation = 'tooltipPulse 3s ease-in-out infinite';
+        tooltip.style.opacity = '1';
+        tooltip.style.transform = 'translateY(10px) scale(0.8)';
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            tooltip.style.animation = 'none';
+            tooltip.style.opacity = '0';
+            tooltip.style.transform = 'translateY(10px) scale(0.8)';
+        }, 3000);
+    }
+});
+    </script>
+    
+</body>
+</html>
