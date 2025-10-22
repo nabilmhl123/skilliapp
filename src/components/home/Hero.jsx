@@ -11,13 +11,13 @@ const Hero = () => {
 
   const buttons = [
     {
-      text: 'Je suis un candidat',
+      text: 'Vous êtes un candidat',
       variant: 'primary',
       size: 'large',
       href: '/candidats'
     },
     {
-      text: 'Je suis une entreprise',
+      text: 'Vous êtes une entreprise',
       variant: 'yellow',
       size: 'large',
       href: '/entreprises'

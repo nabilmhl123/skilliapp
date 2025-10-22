@@ -4,70 +4,20 @@ import Button from '../components/shared/Button';
 import './Paiements.css';
 
 const Paiements = () => {
-  const [selectedPlan, setSelectedPlan] = useState('premium');
+  const [acceptedCGV, setAcceptedCGV] = useState(false);
+  const [isB2B, setIsB2B] = useState(false);
 
-  const plans = [
-    {
-      id: 'starter',
-      name: 'Starter',
-      price: '299',
-      period: 'pack',
-      popular: false,
-      features: [
-        '3 profils qualifiés',
-        'Dossiers complets sous 24h',
-        'CV + coordonnées + compte-rendu RH',
-        'Support par email',
-        'Validité 30 jours'
-      ]
-    },
-    {
-      id: 'premium',
-      name: 'Premium',
-      price: '499',
-      period: 'pack',
-      popular: true,
-      features: [
-        '5 profils qualifiés',
-        'Dossiers complets sous 24h',
-        'CV + coordonnées + compte-rendu RH',
-        'Garantie remplacement',
-        'Support prioritaire',
-        'Validité 60 jours',
-        'Sourcing renforcé'
-      ]
-    },
-    {
-      id: 'business',
-      name: 'Business',
-      price: '899',
-      period: 'pack',
-      popular: false,
-      features: [
-        '10 profils qualifiés',
-        'Dossiers complets sous 24h',
-        'CV + coordonnées + compte-rendu RH',
-        'Garantie remplacement',
-        'Support dédié',
-        'Validité 90 jours',
-        'Sourcing renforcé',
-        'Accès base de données étendue'
-      ]
+  const handleUnlockCredit = () => {
+    if (acceptedCGV && isB2B) {
+      console.log('Redirecting to Stripe checkout...');
+      // Logique de redirection vers Stripe
+      window.location.href = 'https://checkout.stripe.com/...'; // URL à remplacer
     }
-  ];
-
-  const handleSelectPlan = (planId) => {
-    setSelectedPlan(planId);
-  };
-
-  const handleCheckout = () => {
-    console.log('Proceeding to checkout with plan:', selectedPlan);
-    // Logique de paiement
   };
 
   return (
     <main className="paiements-page">
-      {/* Hero Section */}
+      {/* Hero Section avec dégradé violet */}
       <section className="paiements-hero">
         <div className="container">
           <motion.div
@@ -76,213 +26,234 @@ const Paiements = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1>Choisissez votre formule</h1>
+            <div className="delivery-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Livraison sous 24h après demande</span>
+            </div>
+            <h1>Débloquez 5 profils qualifiés en &lt; 24 h</h1>
             <p className="hero-subtitle">
-              Accédez à des profils qualifiés et recrutez rapidement
+              Sans commission • Accompagnement inclus
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="pricing-section">
+      {/* Section principale - Grid à 2 colonnes */}
+      <section className="payment-content-section">
         <div className="container">
-          <div className="pricing-grid">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={plan.id}
-                className={`pricing-card ${plan.popular ? 'popular' : ''} ${selectedPlan === plan.id ? 'selected' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                onClick={() => handleSelectPlan(plan.id)}
-              >
-                {plan.popular && (
-                  <div className="popular-badge">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          <div className="payment-grid">
+            {/* Colonne gauche - Détails du service */}
+            <motion.div
+              className="service-details"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2>Crédit de 5 profils qualifiés</h2>
+              <p className="service-description">
+                Recevez pour chaque profil débloqué : CV complet, coordonnées directes et compte-rendu RH détaillé.
+                Les dossiers vous sont transmis sous 24h ouvrées après votre demande de déblocage.
+              </p>
+
+              <div className="service-features">
+                <h3>Ce qui est inclus :</h3>
+                <ul className="features-checklist">
+                  <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    Populaire
-                  </div>
-                )}
-
-                <div className="plan-header">
-                  <h3 className="plan-name">{plan.name}</h3>
-                  <div className="plan-price">
-                    <span className="price-amount">{plan.price}€</span>
-                    <span className="price-period">/ {plan.period}</span>
-                  </div>
-                </div>
-
-                <ul className="plan-features">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
+                    <span><strong>CV complet</strong> de chaque candidat</span>
+                  </li>
+                  <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Coordonnées directes</strong> (téléphone + email)</span>
+                  </li>
+                  <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Compte-rendu RH</strong> avec motivation, disponibilité, mobilité et prétentions</span>
+                  </li>
+                  <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Livraison sous 24h</strong> après demande de déblocage</span>
+                  </li>
+                  <li>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Recrédit automatique</strong> si profil non joignable ou non disponible</span>
+                  </li>
                 </ul>
+              </div>
 
-                <div className="plan-action">
-                  {selectedPlan === plan.id ? (
-                    <div className="selected-indicator">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                      </svg>
-                      <span>Sélectionné</span>
-                    </div>
-                  ) : (
-                    <button className="select-btn">
-                      Sélectionner
-                    </button>
-                  )}
+              {/* Badges de confiance */}
+              <div className="trust-badges">
+                <div className="trust-badge">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span>Profils RH vérifiés</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div className="trust-badge">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                  <span>&lt; 24h</span>
+                </div>
+                <div className="trust-badge">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                  </svg>
+                  <span>Paiement sécurisé Stripe</span>
+                </div>
+                <div className="trust-badge">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  <span>Validité 60 jours</span>
+                </div>
+              </div>
+            </motion.div>
 
-          {/* Checkout Button */}
-          <motion.div
-            className="checkout-action"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Button
-              variant="primary"
-              size="large"
-              onClick={handleCheckout}
+            {/* Colonne droite - Carte de résumé */}
+            <motion.div
+              className="payment-summary-card"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Procéder au paiement
+              <div className="summary-header">
+                <h3>Résumé</h3>
+              </div>
+
+              <div className="summary-content">
+                <div className="summary-item">
+                  <span className="item-name">Crédit 5 profils qualifiés</span>
+                  <span className="item-price">990,00 € HT</span>
+                </div>
+
+                <div className="summary-divider"></div>
+
+                <div className="summary-total">
+                  <span className="total-label">Total HT</span>
+                  <span className="total-amount">990,00 €</span>
+                </div>
+
+                <p className="vat-notice">
+                  * TVA applicable selon votre régime fiscal. Facture automatique après paiement.
+                </p>
+
+                <div className="validity-info">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  <span>Crédit valable 60 jours • Déblocage à la demande</span>
+                </div>
+
+                {/* Checkboxes légales */}
+                <div className="legal-checkboxes">
+                  <label className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      checked={acceptedCGV}
+                      onChange={(e) => setAcceptedCGV(e.target.checked)}
+                    />
+                    <span>
+                      J'accepte les{' '}
+                      <a href="#cgv" className="legal-link">
+                        Conditions Générales de Vente
+                      </a>
+                    </span>
+                  </label>
+
+                  <label className="checkbox-label">
+                    <input
+                      type="checkbox"
+                      checked={isB2B}
+                      onChange={(e) => setIsB2B(e.target.checked)}
+                    />
+                    <span>Je confirme effectuer un achat professionnel (B2B)</span>
+                  </label>
+                </div>
+
+                {/* Bouton de paiement */}
+                <Button
+                  variant="primary"
+                  size="large"
+                  onClick={handleUnlockCredit}
+                  disabled={!acceptedCGV || !isB2B}
+                  className="unlock-button"
+                >
+                  Je débloque mon crédit
+                </Button>
+
+                <p className="security-note">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0110 0v4"/>
+                  </svg>
+                  Paiement sécurisé • Stripe 3D Secure
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section CTA - Voir les candidats */}
+      <section className="cta-section">
+        <div className="container">
+          <motion.div
+            className="cta-content"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2>Découvrez nos candidats dès maintenant</h2>
+            <p>Parcourez notre base de profils qualifiés avant de débloquer</p>
+            <Button variant="secondary" size="large">
+              Voir les candidats
             </Button>
-            <p className="checkout-note">
-              Paiement sécurisé • Satisfaction garantie • Aucun engagement
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features-section">
+      {/* Section Garantie */}
+      <section className="guarantee-section">
         <div className="container">
-          <h2 className="section-title">Ce qui est inclus dans tous les packs</h2>
-
-          <div className="features-grid">
-            <motion.div
-              className="feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              <div className="feature-icon">⚡</div>
-              <h3>Livraison rapide</h3>
-              <p>Recevez les dossiers complets en moins de 24h ouvrées après déblocage.</p>
-            </motion.div>
-
-            <motion.div
-              className="feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <div className="feature-icon">✅</div>
-              <h3>Profils qualifiés</h3>
-              <p>Tous nos candidats sont préqualifiés par notre équipe RH avant diffusion.</p>
-            </motion.div>
-
-            <motion.div
-              className="feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <div className="feature-icon">📋</div>
-              <h3>Dossiers complets</h3>
-              <p>CV détaillé, coordonnées complètes et compte-rendu RH pour chaque profil.</p>
-            </motion.div>
-
-            <motion.div
-              className="feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <div className="feature-icon">💰</div>
-              <h3>Prix fixe</h3>
-              <p>Aucune commission sur l'embauche, vous payez uniquement pour l'accès aux profils.</p>
-            </motion.div>
-
-            <motion.div
-              className="feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-            >
-              <div className="feature-icon">🔒</div>
-              <h3>Paiement sécurisé</h3>
-              <p>Transactions 100% sécurisées via notre plateforme de paiement certifiée.</p>
-            </motion.div>
-
-            <motion.div
-              className="feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
-              <div className="feature-icon">🎯</div>
-              <h3>Ciblage précis</h3>
-              <p>Accédez uniquement aux profils qui correspondent à vos critères de recherche.</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <div className="container">
-          <h2 className="section-title">Questions fréquentes</h2>
-
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h3>Comment fonctionne le déblocage de profils ?</h3>
+          <motion.div
+            className="guarantee-box"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="guarantee-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div className="guarantee-content">
+              <h3>Notre engagement qualité</h3>
               <p>
-                Une fois votre pack acheté, vous accédez à notre base de candidats. Sélectionnez les profils
-                qui vous intéressent et débloquez-les. Vous recevrez les dossiers complets sous 24h.
+                <strong>Profil non joignable ou non disponible = recrédit immédiat.</strong> Nous vérifions
+                chaque candidat et garantissons la qualité de nos profils.
               </p>
             </div>
-
-            <div className="faq-item">
-              <h3>Quelle est la validité des packs ?</h3>
-              <p>
-                La validité dépend du pack choisi : 30 jours pour Starter, 60 jours pour Premium,
-                et 90 jours pour Business. Vous pouvez utiliser vos crédits durant cette période.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h3>Que contient un dossier complet ?</h3>
-              <p>
-                Chaque dossier inclut le CV détaillé du candidat, ses coordonnées complètes (téléphone, email),
-                et un compte-rendu RH avec motivation, disponibilité, mobilité et prétentions salariales.
-              </p>
-            </div>
-
-            <div className="faq-item">
-              <h3>Y a-t-il des frais cachés ?</h3>
-              <p>
-                Non, le prix affiché est le prix final. Aucune commission sur l'embauche, aucun frais
-                supplémentaire. Vous payez uniquement pour l'accès aux profils.
-              </p>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </main>
