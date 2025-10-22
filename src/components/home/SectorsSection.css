@@ -160,6 +160,81 @@
   opacity: 0.9;
 }
 
+/* Mobile Carousel - Hidden by default */
+.mobile-carousel {
+  display: none;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background: var(--white);
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+  padding: 0;
+}
+
+.carousel-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--primary);
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-dot:hover {
+  background: var(--primary);
+  opacity: 0.7;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .sectors-banner-grid {
@@ -199,17 +274,21 @@
     margin-bottom: 40px;
   }
 
-  .sectors-banner-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  /* Hide desktop grid, show mobile carousel */
+  .desktop-grid {
+    display: none;
+  }
+
+  .mobile-carousel {
+    display: block;
   }
 
   .sector-banner {
-    height: 220px;
+    height: 280px;
   }
 
   .sector-banner-content {
-    padding: 18px;
+    padding: 24px;
   }
 
   .sector-banner-icon {
@@ -218,10 +297,10 @@
   }
 
   .sector-banner-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .sector-banner-description {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }

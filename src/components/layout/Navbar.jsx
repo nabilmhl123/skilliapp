@@ -60,7 +60,7 @@ const Navbar = () => {
               Entreprises
             </Link>
             <Button
-              variant="secondary"
+              variant="yellow"
               size="small"
               href="tel:+33970196702"
               icon="📞"
@@ -104,7 +104,7 @@ const Navbar = () => {
                 Entreprises
               </Link>
               <Button
-                variant="secondary"
+                variant="yellow"
                 size="medium"
                 href="tel:+33970196702"
                 icon="📞"

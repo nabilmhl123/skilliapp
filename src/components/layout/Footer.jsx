@@ -35,9 +35,10 @@ const Footer = () => {
           {/* Navigation Section */}
           <nav className="footer-nav">
             <h4>Navigation</h4>
+            <Link to="/">Accueil</Link>
             <Link to="/candidats">Candidats</Link>
             <Link to="/entreprises">Entreprises</Link>
-            <Link to="/">Accueil</Link>
+            <Link to="/espace-candidats">Espace Candidats</Link>
           </nav>
 
           {/* Contact Section */}

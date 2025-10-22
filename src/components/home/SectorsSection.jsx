@@ -1,8 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './SectorsSection.css';
 
 const SectorsSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const sectors = [
     {
       name: 'Industrie',
@@ -76,6 +78,14 @@ const SectorsSection = () => {
     }
   };
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % sectors.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + sectors.length) % sectors.length);
+  };
+
   return (
     <section className="sectors-section section">
       <div className="container">
@@ -92,8 +102,9 @@ const SectorsSection = () => {
           </p>
         </motion.div>
 
+        {/* Desktop Grid */}
         <motion.div
-          className="sectors-banner-grid"
+          className="sectors-banner-grid desktop-grid"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -114,13 +125,57 @@ const SectorsSection = () => {
                 <div className="sector-banner-overlay"></div>
               </div>
               <div className="sector-banner-content">
-                {/* <span className="sector-banner-icon">{sector.icon}</span> */}
                 <h3 className="sector-banner-title">{sector.name}</h3>
                 <p className="sector-banner-description">{sector.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Mobile Carousel */}
+        <div className="sectors-carousel mobile-carousel">
+          <div className="carousel-container">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                className="sector-banner"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="sector-banner-image">
+                  <img src={sectors[currentSlide].image} alt={sectors[currentSlide].name} loading="lazy" />
+                  <div className="sector-banner-overlay"></div>
+                </div>
+                <div className="sector-banner-content">
+                  <h3 className="sector-banner-title">{sectors[currentSlide].name}</h3>
+                  <p className="sector-banner-description">{sectors[currentSlide].description}</p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="carousel-navigation">
+            <button onClick={prevSlide} className="carousel-btn prev-btn" aria-label="Secteur précédent">
+              ‹
+            </button>
+            <div className="carousel-dots">
+              {sectors.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
+                  aria-label={`Aller au secteur ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button onClick={nextSlide} className="carousel-btn next-btn" aria-label="Secteur suivant">
+              ›
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

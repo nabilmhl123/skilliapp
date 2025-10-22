@@ -56,7 +56,7 @@ const ProblemSection = () => {
               </p>
             </Card.Body>
             <Card.Footer>
-              <Button variant="secondary" href="/entreprises">
+              <Button variant="yellow" href="/entreprises">
                 Je suis une entreprise
               </Button>
             </Card.Footer>

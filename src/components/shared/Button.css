@@ -42,6 +42,18 @@
   box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
 }
 
+.btn-yellow {
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+  color: var(--white);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.4);
+}
+
+.btn-yellow:hover:not(:disabled) {
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.6);
+  transform: translateY(-2px);
+}
+
 .btn-outline {
   background: transparent;
   border: 2px solid var(--primary);
