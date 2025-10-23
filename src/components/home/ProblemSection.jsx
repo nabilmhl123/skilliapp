@@ -37,7 +37,7 @@ const ProblemSection = () => {
             </Card.Body>
             <Card.Footer>
               <Button variant="primary" href="/candidats">
-                Je suis un candidat
+                Vous êtes un candidat
               </Button>
             </Card.Footer>
           </Card>
@@ -57,7 +57,7 @@ const ProblemSection = () => {
             </Card.Body>
             <Card.Footer>
               <Button variant="yellow" href="/entreprises">
-                Je suis une entreprise
+                Vous êtes une entreprise
               </Button>
             </Card.Footer>
           </Card>
