@@ -32,10 +32,15 @@ const Button = ({
     const isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
 
     if (isExternal) {
+      // Pour les liens http/https, ouvrir dans un nouvel onglet
+      const shouldOpenNewTab = href.startsWith('http');
+
       return (
         <motion.a
           href={href}
           className={classes}
+          target={shouldOpenNewTab ? "_blank" : undefined}
+          rel={shouldOpenNewTab ? "noopener noreferrer" : undefined}
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
           transition={{ duration: 0.2 }}

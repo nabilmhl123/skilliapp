@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import Candidates from './pages/Candidates';
 import CompaniesNew from './pages/CompaniesNew';
 import EspaceCandidats from './pages/EspaceCandidats';
-import CV from './pages/CV';
 import Paiements from './pages/Paiements';
 import './styles/globals.css';
 
@@ -25,7 +24,6 @@ function App() {
           <Route path="/candidats" element={<Candidates />} />
           <Route path="/entreprises" element={<CompaniesNew />} />
           <Route path="/espace-candidats" element={<EspaceCandidats />} />
-          <Route path="/cv" element={<CV />} />
           <Route path="/paiements" element={<Paiements />} />
         </Routes>
 
