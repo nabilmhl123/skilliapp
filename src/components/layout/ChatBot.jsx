@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import './ChatBot.css';
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
+  const location = useLocation();
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -14,6 +16,35 @@ const ChatBot = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  // Déterminer l'URL du chatbot selon la page
+  const getChatbotUrl = () => {
+    const path = location.pathname;
+
+    // Page Candidats
+    if (path === '/candidats' || path === '/cv' || path === '/espace-candidats') {
+      return {
+        url: 'https://eu.jotform.com/agent/0199ec4163ab79a9bd33b9051da28fb25505',
+        title: 'Eloise - Assistant Recrutement'
+      };
+    }
+
+    // Page Entreprises
+    if (path === '/entreprises' || path === '/paiements') {
+      return {
+        url: 'https://eu.jotform.com/agent/019a075b16007276bfa9ffbd9f724c672e40',
+        title: 'Clément - Assistant Recrutement Entreprise'
+      };
+    }
+
+    // Page Home (par défaut)
+    return {
+      url: 'https://eu.jotform.com/agent/019a071e8f1f77b697e1d53ba30bd277e2ae',
+      title: 'Assistance Skillijob'
+    };
+  };
+
+  const chatbotConfig = getChatbotUrl();
 
   return (
     <>
@@ -84,7 +115,7 @@ const ChatBot = () => {
             <div className="chatbot-popup-header">
               <div className="chatbot-popup-title">
                 <span className="chatbot-popup-icon"></span>
-                <span>Assistance Skillijob</span>
+                <span>{chatbotConfig.title}</span>
               </div>
               <button
                 className="chatbot-popup-close"
@@ -98,8 +129,8 @@ const ChatBot = () => {
             {/* Body du popup */}
             <div className="chatbot-popup-body">
               <iframe
-                src="https://eu.jotform.com/agent/0199ec4163ab79a9bd33b9051da28fb25505"
-                title="Formulaire de contact Skillijob"
+                src={chatbotConfig.url}
+                title={chatbotConfig.title}
                 frameBorder="0"
                 className="chatbot-iframe"
               />

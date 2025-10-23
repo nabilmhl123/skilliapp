@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ChatBot from './components/layout/ChatBot';
+import NewsletterPopup from './components/NewsletterPopup';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Candidates from './pages/Candidates';
@@ -30,6 +31,7 @@ function App() {
 
         <Footer />
         <ChatBot />
+        <NewsletterPopup />
       </div>
     </Router>
   );

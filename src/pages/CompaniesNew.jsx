@@ -127,8 +127,15 @@ const CompaniesNew = () => {
       href: '/espace-candidats'
     },
     {
-      text: 'Obtenir mes 5 profils qualifiés',
+      text: 'Déposer une offre d\'emploi',
       variant: 'yellow',
+      size: 'large',
+      href: 'https://form.jotform.com/252922402753050',
+      external: true
+    },
+    {
+      text: 'Obtenir mes 5 profils qualifiés',
+      variant: 'secondary',
       size: 'large',
       href: '/paiements'
     }

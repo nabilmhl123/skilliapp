@@ -45,7 +45,8 @@ const Candidates = () => {
       text: 'Déposer mon CV',
       variant: 'primary',
       size: 'large',
-      href: '/cv'
+      href: 'https://form.jotform.com/252881502955059',
+      external: true
     },
     {
       text: '📞 09 70 19 67 02',
@@ -237,7 +238,7 @@ const Candidates = () => {
                   <div className="cta-highlight-badge">Recommandé</div>
                   <h3 className="cta-action-title">Déposer mon CV</h3>
                   <p className="cta-action-desc">Notre équipe RH optimise votre profil et vous met en relation avec les meilleurs recruteurs</p>
-                  <Button variant="primary" size="large" href="/cv">
+                  <Button variant="primary" size="large" href="https://form.jotform.com/252881502955059" external>
                     Déposer mon CV
                   </Button>
                 </div>
