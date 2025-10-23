@@ -190,21 +190,260 @@ p {
 }
 
 /* ===========================================
-   RESPONSIVE
+   RESPONSIVE - Tous les devices
    =========================================== */
-@media (max-width: 768px) {
+
+/* Desktop large */
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1140px;
+    padding: 0 24px;
+  }
+
   .section {
-    padding: 60px 0;
+    padding: 75px 0;
+  }
+}
+
+/* Desktop standard et tablettes landscape */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 65px 0;
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 55px;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 3.8vw, 2.6rem);
+  }
+
+  h3 {
+    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  }
+
+  h4 {
+    font-size: clamp(1.15rem, 2.3vw, 1.45rem);
+  }
+
+  p {
+    font-size: clamp(0.98rem, 1.4vw, 1.12rem);
+  }
+}
+
+/* Tablettes portrait */
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 18px;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-header {
+    margin-bottom: 45px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.8vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.4rem);
+  }
+
+  h3 {
+    font-size: clamp(1.35rem, 2.9vw, 1.8rem);
+  }
+
+  h4 {
+    font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  }
+
+  p {
+    font-size: clamp(0.96rem, 1.45vw, 1.08rem);
   }
 
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+/* Grands mobiles */
+@media (max-width: 640px) {
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-header {
+    margin-bottom: 38px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 4.2vw, 2.2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+  }
+
+  h4 {
+    font-size: clamp(1.08rem, 2.5vw, 1.35rem);
+  }
+
+  p {
+    font-size: clamp(0.94rem, 1.5vw, 1.05rem);
+    line-height: 1.65;
+  }
+
+  .grid-2,
+  .grid-3 {
+    gap: 22px;
+  }
+}
+
+/* Mobiles standard */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .section {
+    padding: 42px 0;
+  }
+
+  .section-header {
+    margin-bottom: 34px;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 5.5vw, 2.3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 4.5vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 3.2vw, 1.6rem);
+  }
+
+  h4 {
+    font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+  }
+
+  p {
+    font-size: clamp(0.92rem, 1.55vw, 1.02rem);
+    line-height: 1.6;
+  }
+
+  .grid-2,
+  .grid-3 {
     gap: 20px;
+  }
+}
+
+/* Petits mobiles */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 6vw, 2.1rem);
+  }
+
+  h2 {
+    font-size: clamp(1.48rem, 4.8vw, 1.85rem);
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 3.4vw, 1.5rem);
+  }
+
+  h4 {
+    font-size: clamp(1.02rem, 2.7vw, 1.25rem);
+  }
+
+  p {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+  }
+
+  .grid-2,
+  .grid-3 {
+    gap: 18px;
+  }
+}
+
+/* Très petits mobiles */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .section {
+    padding: 35px 0;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: clamp(1.55rem, 6.5vw, 1.95rem);
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 5vw, 1.75rem);
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 3.6vw, 1.42rem);
+  }
+
+  h4 {
+    font-size: clamp(1rem, 2.8vw, 1.2rem);
+  }
+
+  p {
+    font-size: clamp(0.88rem, 1.65vw, 0.96rem);
+    line-height: 1.58;
+  }
+
+  .grid-2,
+  .grid-3 {
+    gap: 16px;
   }
 }
 

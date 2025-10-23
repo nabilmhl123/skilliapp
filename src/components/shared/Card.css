@@ -49,9 +49,14 @@
   cursor: pointer;
 }
 
-/* Card Header */
+/* Card Header - Centered */
 .card-header {
   margin-bottom: 20px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100%;
 }
 
 /* Card Label */
@@ -85,11 +90,16 @@
   font-weight: 700;
 }
 
-/* Card Footer */
+/* Card Footer - Centered */
 .card-footer {
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--line);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100%;
 }
 
 /* Responsive */
@@ -101,5 +111,25 @@
   .card-label {
     font-size: 1rem;
     padding: 10px 20px;
+  }
+
+  .card-footer {
+    flex-direction: column;
+  }
+
+  .card-footer .btn {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px 16px;
+  }
+
+  .card-body p {
+    font-size: 0.95rem;
   }
 }

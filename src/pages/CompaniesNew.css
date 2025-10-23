@@ -28,76 +28,7 @@
 }
 
 /* ========== HERO SECTION ========== */
-.hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 0;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  line-height: 1.1;
-  margin: 0 0 1rem;
-  background: linear-gradient(45deg, #fff, #DDCCFF);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-  color: #DDCCFF;
-  font-size: 1.15rem;
-  max-width: 760px;
-}
-
-/* Badges */
-.badges {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1.25rem;
-}
-
-.badge {
-  display: inline-block;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  color: #fff;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-}
-
-/* CTA */
-.cta {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: 1.25rem;
-}
-
-.sub-note {
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-  color: #EDE7FF;
-}
+/* Hero styling handled by HeroSection component */
 
 /* ========== SECTIONS ========== */
 section {
@@ -643,6 +574,14 @@ section {
   margin-bottom: 1rem;
 }
 
+.pricing-cta-section .btn {
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+  padding: 14px 20px;
+}
+
 .pricing-note {
   margin: 1rem 0 0;
   color: var(--muted);
@@ -870,6 +809,10 @@ section {
 
 .cta-action-card .btn {
   width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+  padding: 14px 20px;
 }
 
 /* ========== RESPONSIVE ========== */
@@ -963,25 +906,222 @@ section {
     animation: none;
   }
 
+  /* Pricing Section */
   .pricing-section {
     padding: 48px 0;
   }
 
+  .pricing-container {
+    padding: 0 16px;
+  }
+
   .pricing-title {
-    font-size: 1.75rem;
+    font-size: clamp(1.65rem, 4.5vw, 1.85rem);
+    line-height: 1.25;
   }
 
   .pricing-subtitle {
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    line-height: 1.55;
   }
 
-  .pricing-features-minimal,
+  .pricing-badge {
+    font-size: 0.72rem;
+    padding: 7px 16px;
+  }
+
+  .pricing-card-minimal {
+    border-radius: 18px;
+  }
+
+  .pricing-features-minimal {
+    padding: 1.75rem 1.5rem;
+  }
+
   .pricing-cta-section {
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .feature-item-minimal {
+    gap: 14px;
+    padding: 14px 0;
   }
 
   .feature-text {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 2vw, 0.98rem);
+    line-height: 1.55;
+  }
+
+  .feature-check {
+    width: 26px;
+    height: 26px;
+    font-size: 15px;
+  }
+
+  .pricing-note {
+    font-size: clamp(0.86rem, 1.9vw, 0.92rem);
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 52px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-content p {
+    font-size: clamp(0.92rem, 2vw, 1rem);
+  }
+
+  .values {
+    text-align: left;
+    display: inline-block;
+    margin: 1.25rem auto;
+  }
+
+  .values li {
+    font-size: clamp(0.9rem, 2vw, 0.98rem);
+  }
+
+  .about-stats {
+    margin-top: 1.5rem;
+  }
+
+  .facts {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .facts-grid {
+    gap: 10px;
+  }
+
+  .fact {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .fact strong {
+    font-size: clamp(1.5rem, 4vw, 1.7rem);
+  }
+
+  .fact span {
+    font-size: clamp(0.82rem, 1.9vw, 0.88rem);
+  }
+
+  /* CTA Section */
+  .cta-section-modern {
+    padding: 50px 0;
+  }
+
+  .cta-modal-wrapper {
+    padding: 0 16px;
+  }
+
+  .cta-modal-card {
+    padding: 2rem 1.5rem;
+    border-radius: 18px;
+  }
+
+  .cta-modal-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .cta-modal-title {
+    font-size: clamp(1.6rem, 5vw, 1.85rem);
+    line-height: 1.25;
+  }
+
+  .cta-modal-subtitle {
+    font-size: clamp(0.87rem, 2.3vw, 0.95rem);
+  }
+
+  .cta-modal-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.375rem;
+  }
+
+  .cta-action-card {
+    width: 100%;
+    padding: 1.625rem 1.375rem;
+    border-radius: 16px;
+  }
+
+  .cta-action-title {
+    font-size: clamp(1.1rem, 3vw, 1.22rem);
+  }
+
+  .cta-action-desc {
+    font-size: clamp(0.85rem, 2.1vw, 0.92rem);
+    min-height: auto;
+    margin-bottom: 1.125rem;
+  }
+
+  .cta-action-card .btn {
+    width: 100%;
+  }
+
+  .cta-highlight-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+}
+
+/* Petits mobiles - 480px */
+@media (max-width: 480px) {
+  /* Pricing Section */
+  .pricing-section {
+    padding: 42px 0;
+  }
+
+  .pricing-container {
+    padding: 0 14px;
+  }
+
+  .pricing-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .pricing-title {
+    font-size: clamp(1.5rem, 5vw, 1.7rem);
+  }
+
+  .pricing-subtitle {
+    font-size: clamp(0.88rem, 2.3vw, 0.98rem);
+  }
+
+  .pricing-badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+
+  .pricing-card-minimal {
+    border-radius: 16px;
+  }
+
+  .pricing-features-minimal {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .pricing-cta-section {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .feature-item-minimal {
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .feature-text {
+    font-size: clamp(0.86rem, 2.2vw, 0.92rem);
   }
 
   .feature-check {
@@ -990,28 +1130,91 @@ section {
     font-size: 14px;
   }
 
+  .pricing-note {
+    font-size: clamp(0.84rem, 2vw, 0.88rem);
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 46px 0;
+  }
+
+  .about-grid {
+    gap: 1.75rem;
+  }
+
+  .about-content p {
+    font-size: clamp(0.88rem, 2.2vw, 0.95rem);
+    line-height: 1.6;
+  }
+
+  .values li {
+    font-size: clamp(0.86rem, 2.1vw, 0.92rem);
+    margin-bottom: 0.65rem;
+  }
+
+  .facts {
+    padding: 14px;
+  }
+
+  .fact {
+    padding: 11px;
+  }
+
+  .fact strong {
+    font-size: clamp(1.4rem, 4.5vw, 1.6rem);
+  }
+
+  .fact span {
+    font-size: clamp(0.8rem, 2vw, 0.85rem);
+  }
+
+  /* CTA Section */
   .cta-section-modern {
-    padding: 48px 0;
+    padding: 45px 0;
+  }
+
+  .cta-modal-wrapper {
+    padding: 0 14px;
   }
 
   .cta-modal-card {
-    padding: 1.5rem;
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .cta-modal-header {
+    margin-bottom: 1.5rem;
   }
 
   .cta-modal-title {
-    font-size: 1.75rem;
+    font-size: clamp(1.45rem, 5.5vw, 1.7rem);
   }
 
   .cta-modal-subtitle {
-    font-size: 0.9rem;
+    font-size: clamp(0.84rem, 2.4vw, 0.9rem);
+  }
+
+  .cta-modal-actions {
+    gap: 1.25rem;
+  }
+
+  .cta-action-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 14px;
   }
 
   .cta-action-title {
-    font-size: 1.1rem;
+    font-size: clamp(1.05rem, 3.2vw, 1.15rem);
   }
 
   .cta-action-desc {
-    font-size: 0.9rem;
-    min-height: auto;
+    font-size: clamp(0.83rem, 2.2vw, 0.88rem);
+    margin-bottom: 1rem;
+  }
+
+  .cta-highlight-badge {
+    font-size: 0.68rem;
+    padding: 4px 11px;
   }
 }

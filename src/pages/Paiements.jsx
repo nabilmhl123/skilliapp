@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Button from '../components/shared/Button';
 import './Paiements.css';
 
 const Paiements = () => {
+  const navigate = useNavigate();
   const [acceptedCGV, setAcceptedCGV] = useState(false);
   const [isB2B, setIsB2B] = useState(false);
 
@@ -13,6 +15,10 @@ const Paiements = () => {
       // Logique de redirection vers Stripe
       window.location.href = 'https://checkout.stripe.com/...'; // URL à remplacer
     }
+  };
+
+  const handleViewCandidates = () => {
+    navigate('/espace-candidats');
   };
 
   return (
@@ -224,7 +230,7 @@ const Paiements = () => {
           >
             <h2>Découvrez nos candidats dès maintenant</h2>
             <p>Parcourez notre base de profils qualifiés avant de débloquer</p>
-            <Button variant="secondary" size="large">
+            <Button variant="secondary" size="large" onClick={handleViewCandidates}>
               Voir les candidats
             </Button>
           </motion.div>

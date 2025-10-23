@@ -26,13 +26,7 @@ const Hero = () => {
 
   return (
     <HeroSection
-      title={
-        <>
-          Trouvez<br />
-          Recrutez<br />
-          Connectez
-        </>
-      }
+      title="Trouvez • Recrutez • Connectez"
       subtitle="Candidats, accédez à des offres réelles. Entreprises, découvrez des profils disponibles. Choisissez votre espace et démarrez gratuitement."
       badges={badges}
       buttons={buttons}

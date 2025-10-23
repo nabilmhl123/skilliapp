@@ -238,7 +238,7 @@ const Candidates = () => {
                   <h3 className="cta-action-title">Déposer mon CV</h3>
                   <p className="cta-action-desc">Notre équipe RH optimise votre profil et vous met en relation avec les meilleurs recruteurs</p>
                   <Button variant="primary" size="large" href="/cv">
-                    Déposer mon CV gratuitement
+                    Déposer mon CV
                   </Button>
                 </div>
 

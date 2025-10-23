@@ -47,6 +47,10 @@ const HeroSection = ({
         >
           {/* Hero Text */}
           <motion.div className="hero-section-text" variants={itemVariants}>
+            <h1>{title}</h1>
+
+            <p className="hero-section-subtitle">{subtitle}</p>
+
             {badges.length > 0 && (
               <div className="hero-badges">
                 {badges.map((badge, index) => (
@@ -54,10 +58,6 @@ const HeroSection = ({
                 ))}
               </div>
             )}
-
-            <h1>{title}</h1>
-
-            <p className="hero-section-subtitle">{subtitle}</p>
 
             {buttons.length > 0 && (
               <div className="hero-section-buttons">
