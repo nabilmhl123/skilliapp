@@ -139,23 +139,28 @@
 
 .footer-legal {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .footer-legal a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   transition: color var(--transition-fast);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .footer-legal a:hover {
   color: var(--secondary);
+  text-decoration: underline;
 }
 
 .footer-legal span {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin: 0 4px;
 }
 
 /* Responsive */

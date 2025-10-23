@@ -73,40 +73,47 @@
 }
 
 .legal-body h1 {
-  color: var(--primary);
+  color: #0066CC;
   font-size: 2rem;
   margin-bottom: 20px;
   margin-top: 0;
 }
 
 .legal-body h2 {
-  color: var(--primary);
+  color: #0066CC;
   font-size: 1.3rem;
   margin-top: 30px;
   margin-bottom: 12px;
 }
 
+.legal-body h3 {
+  color: #0066CC;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .legal-body p {
-  color: var(--text);
+  color: #1E293B;
   line-height: 1.7;
   margin-bottom: 16px;
 }
 
 .legal-body .intro {
   font-size: 1.1rem;
-  color: var(--muted);
+  color: #64748B;
   margin-bottom: 30px;
 }
 
 .legal-body .muted {
-  color: var(--muted);
+  color: #64748B;
   font-style: italic;
 }
 
 /* Cards dans le body */
 .legal-body .card {
-  background: var(--bg);
-  border: 1px solid var(--line);
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 20px;
@@ -114,6 +121,13 @@
 
 .legal-body .card h2 {
   margin-top: 0;
+  color: #0066CC;
+}
+
+.legal-body .card p,
+.legal-body .card ul li,
+.legal-body .card td {
+  color: #1E293B;
 }
 
 .legal-body .box {
@@ -186,7 +200,8 @@
 
 .legal-body table td {
   padding: 12px 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #E2E8F0;
+  color: #1E293B;
 }
 
 .legal-body table tbody tr:hover {
@@ -203,26 +218,27 @@
   padding: 8px 0;
   padding-left: 24px;
   position: relative;
+  color: #1E293B;
 }
 
 .legal-body ul li::before {
   content: '•';
   position: absolute;
   left: 8px;
-  color: var(--primary);
+  color: #0066CC;
   font-weight: bold;
 }
 
 /* Liens */
 .legal-body a {
-  color: var(--primary);
+  color: #0066CC;
   text-decoration: none;
   font-weight: 600;
-  transition: all var(--transition-normal);
+  transition: all 0.2s ease;
 }
 
 .legal-body a:hover {
-  color: var(--secondary);
+  color: #FFC845;
   text-decoration: underline;
 }
 

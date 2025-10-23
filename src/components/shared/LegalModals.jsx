@@ -94,84 +94,103 @@ const LegalModals = () => {
 const MentionsLegales = () => (
   <>
     <h1>Mentions légales</h1>
+    <p className="muted">Dernière mise à jour : 13 octobre 2025</p>
+
     <section className="card">
       <h2>Éditeur du site</h2>
       <p>
-        <strong>SKILLIJOB</strong>, Société par actions simplifiée (SAS)
+        Le présent site <strong>www.skillijob.fr</strong> (ci-après « le Site ») est édité par <strong>SKILLIJOB</strong>
         <br />
-        Siège social : Rue François 1er, 75008 Paris, France
         <br />
-        RCS Paris – <strong>SIREN</strong> 980 918 858 – <strong>SIRET</strong> 980 918 858 00013
+        <strong>Forme juridique :</strong> SAS (Société par actions simplifiée)
         <br />
-        Capital social : 1 000 €
+        <strong>Siège social :</strong> 60 rue François 1er, 75008 Paris, France
+        <br />
+        <strong>Immatriculée au RCS Paris</strong> sous le numéro <strong>SIREN</strong> 980 918 858 — <strong>SIRET</strong> 980 918 858 00013
+        <br />
+        <strong>N° TVA intracommunautaire :</strong> FR35980918858
       </p>
       <p>
-        <strong>Directrice de la publication :</strong> Anissa Melo, Présidente
-      </p>
-    </section>
-
-    <section className="card">
-      <h2>Contact</h2>
-      <p>
-        📧 <a href="mailto:contact@skillijob.com">contact@skillijob.com</a>
+        <strong>Téléphone :</strong> 09 70 19 67 02
         <br />
-        📞 09 70 19 67 02
+        <strong>E-mail :</strong> <a href="mailto:contact@skillijob.fr">contact@skillijob.fr</a>
+      </p>
+      <p>
+        <strong>Directrice de la publication :</strong> Anissa Melo — Présidente
       </p>
     </section>
 
     <section className="card">
       <h2>Hébergement</h2>
-      <div className="box">
-        <p>
-          <strong>IONOS</strong> — <em>coordonnées à compléter</em> :
-        </p>
-        <ul>
-          <li>
-            Raison sociale complète : <span className="muted">[à compléter]</span>
-          </li>
-          <li>
-            Adresse : <span className="muted">[à compléter]</span>
-          </li>
-          <li>
-            Téléphone : <span className="muted">[à compléter]</span>
-          </li>
-        </ul>
-      </div>
+      <p>
+        <strong>Hébergeur :</strong> IONOS
+        <br />
+        <strong>Adresse :</strong> 7 place de la Gare, 57200 Sarreguemines, France
+        <br />
+        <strong>Téléphone :</strong> 09 70 80 89 11
+        <br />
+        <strong>Site :</strong> <a href="https://www.ionos.fr" target="_blank" rel="noopener noreferrer">www.ionos.fr</a>
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>Accès au site</h2>
+      <p>
+        L'accès au Site est gratuit. SKILLIJOB s'efforce d'en assurer l'accessibilité 24/7, sans obligation de résultat. L'éditeur ne saurait être tenu responsable en cas d'indisponibilité, de maintenance ou de mise à jour.
+      </p>
     </section>
 
     <section className="card">
       <h2>Propriété intellectuelle</h2>
       <p>
-        Le présent site et l'ensemble de ses contenus (textes, visuels, logos, marques, vidéos, code) sont la propriété de SKILLIJOB ou de ses partenaires et sont protégés par le droit de la propriété intellectuelle. Toute reproduction ou représentation non autorisée est interdite.
+        L'ensemble des éléments du Site (textes, images, graphismes, logos, vidéos, icônes, code, charte graphique, etc.) est protégé par le droit de la propriété intellectuelle et demeure la propriété exclusive de SKILLIJOB ou de ses partenaires.
+      </p>
+      <p>
+        Toute reproduction, représentation, modification, adaptation, distribution ou exploitation, même partielle, sans autorisation écrite est interdite.
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>Liens hypertextes</h2>
+      <p>
+        Le Site peut contenir des liens vers des sites tiers. SKILLIJOB n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leurs contenus ou pratiques.
+      </p>
+      <p>
+        La mise en place de liens vers le Site est autorisée sous réserve d'un lien simple, non trompeur et respectueux des intérêts de SKILLIJOB ; l'éditeur peut exiger la suppression de tout lien non conforme.
       </p>
     </section>
 
     <section className="card">
       <h2>Responsabilité</h2>
       <p>
-        SKILLIJOB met en œuvre les moyens nécessaires pour assurer l'exactitude et la mise à jour du site, sans garantie d'exhaustivité. L'éditeur ne saurait être tenu responsable de l'utilisation faite du site ni des dommages directs ou indirects qui pourraient en résulter.
-      </p>
-    </section>
-
-    <section className="card">
-      <h2>Signalement</h2>
-      <p>
-        Pour tout signalement d'un contenu illicite, écrivez à{' '}
-        <a href="mailto:contact@skillijob.com">contact@skillijob.com</a>.
+        L'éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du Site (inaccessibilité, perte de données, détériorations, virus, etc.).
       </p>
     </section>
 
     <section className="card">
       <h2>Données personnelles</h2>
       <p>
-        Voir notre Politique de confidentialité et notre Politique cookies.
+        Pour les informations relatives aux traitements éventuels, l'utilisateur est invité à consulter la <strong>Politique de confidentialité</strong>.
       </p>
     </section>
 
     <section className="card">
-      <h2>Droit applicable</h2>
+      <h2>Droit applicable — Litiges</h2>
       <p>
-        Le présent site est soumis au droit français. En cas de litige et à défaut d'accord amiable, compétence est attribuée aux juridictions du ressort de la Cour d'appel de Paris.
+        Les présentes mentions légales sont soumises au droit français. En cas de litige et à défaut d'accord amiable, les tribunaux compétents de Paris seront seuls compétents.
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>Contact</h2>
+      <p>
+        <strong>SKILLIJOB</strong>
+        <br />
+        60 rue François 1er, 75008 Paris
+        <br />
+        📧 <a href="mailto:contact@skillijob.fr">contact@skillijob.fr</a>
+        <br />
+        📞 09 70 19 67 02
       </p>
     </section>
   </>
@@ -180,82 +199,149 @@ const MentionsLegales = () => (
 // Composant Politique Cookies
 const PolitiqueCookies = () => (
   <>
-    <header>
-      <div className="kicker">
-        <span aria-hidden="true" className="dot"></span>
-        <span>SKILLIJOB</span>
-      </div>
-      <h1>Politique cookies</h1>
-      <p className="muted">
-        Cette politique explique comment SKILLIJOB utilise des cookies et technologies similaires sur son site.
-      </p>
-    </header>
+    <h1>Politique de cookies</h1>
+    <p className="muted">Dernière mise à jour : 13 octobre 2025</p>
 
     <section className="card">
-      <h2>1. Qu'est-ce qu'un cookie ?</h2>
       <p>
-        Un cookie est un fichier déposé sur votre terminal pour stocker des informations. Certains sont essentiels au site (cookies "strictement nécessaires"), d'autres sont optionnels (mesure d'audience, marketing, etc.).
+        La présente politique explique l'usage des cookies/traceurs sur la Landing Page « Candidat », la base juridique de leur dépôt et vos moyens de contrôle.
+      </p>
+      <p>
+        <strong>Important :</strong> Sur cette Landing Page, seuls des cookies strictement nécessaires au fonctionnement sont déposés par défaut. Aucun cookie non essentiel (publicité, réseaux sociaux, analytics non exemptés) ne sera activé sans votre consentement préalable.
       </p>
     </section>
 
     <section className="card">
-      <h2>2. Votre choix</h2>
+      <h2>1. Définition</h2>
       <p>
-        Lors de votre première visite, un bandeau vous permet d'accepter/refuser les cookies non essentiels. Vous pouvez modifier votre choix à tout moment via Paramètres cookies (lien à intégrer à votre CMP).
+        Un cookie est un petit fichier texte enregistré sur votre terminal lors de la consultation d'un site. Des technologies similaires (localStorage, balises, pixels, SDK) peuvent avoir des fonctions équivalentes ; l'ensemble est désigné « cookies ».
       </p>
     </section>
 
     <section className="card">
-      <h2>3. Cookies utilisés</h2>
+      <h2>2. Cookies utilisés</h2>
+
+      <h3>2.1. Cookies strictement nécessaires (déposés sans consentement)</h3>
+      <p>Indispensables à la fourniture du service et à la sécurité du Site.</p>
       <div className="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>Catégorie</th>
+              <th>Nom (exemple)</th>
               <th>Finalité</th>
-              <th>Exemples</th>
               <th>Durée</th>
+              <th>Type</th>
+              <th>Fournisseur</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Nécessaires</td>
-              <td>Fonctionnement du site, sécurité, équilibrage</td>
-              <td>Session, préférence langue</td>
-              <td>Session à 12 mois</td>
+              <td>__session</td>
+              <td>Session / répartition de charge</td>
+              <td>Session</td>
+              <td>Interne</td>
+              <td>SKILLIJOB</td>
             </tr>
             <tr>
-              <td>Mesure d'audience</td>
-              <td>Statistiques d'usage pour améliorer le service</td>
-              <td>
-                <span className="muted">[Matomo/GA4 – à confirmer]</span>
-              </td>
-              <td>6 à 13 mois</td>
+              <td>cookie_consent</td>
+              <td>Mémorisation des choix de consentement</td>
+              <td>6 mois</td>
+              <td>Interne</td>
+              <td>SKILLIJOB</td>
             </tr>
             <tr>
-              <td>Marketing</td>
-              <td>Suivi des conversions, remarketing</td>
-              <td>
-                <span className="muted">[ex. Meta/LinkedIn – à confirmer]</span>
-              </td>
-              <td>Selon partenaire</td>
+              <td>sec_*</td>
+              <td>Sécurité (anti-abus, anti-bot)</td>
+              <td>24 h</td>
+              <td>Interne</td>
+              <td>SKILLIJOB</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p className="muted" style={{ fontSize: '0.9em', marginTop: '0.5rem' }}>
+        Adapter ces noms à votre stack (reverse-proxy, CDN, framework, etc.).
+      </p>
+
+      <h3>2.2. Mesure d'audience exemptée (optionnelle)</h3>
+      <p>
+        Si vous implémentez un outil exempté de consentement (ex. Matomo auto-hébergé, IP anonymisée, pas de suivi cross-site), dépôt possible sur base d'intérêt légitime.
+      </p>
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom (exemple)</th>
+              <th>Finalité</th>
+              <th>Durée</th>
+              <th>Type</th>
+              <th>Fournisseur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>_pk_id.*</td>
+              <td>Statistiques agrégées de visites</td>
+              <td>13 mois (max CNIL)</td>
+              <td>Interne</td>
+              <td>Matomo (self-host)</td>
+            </tr>
+            <tr>
+              <td>_pk_ses.*</td>
+              <td>Session statistique</td>
+              <td>30 min</td>
+              <td>Interne</td>
+              <td>Matomo (self-host)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="muted" style={{ fontSize: '0.9em', marginTop: '0.5rem' }}>
+        Si vous n'utilisez pas une solution exemptée, ces cookies sont non essentiels et désactivés par défaut jusqu'au consentement.
+      </p>
+
+      <h3>2.3. Cookies non essentiels (activés uniquement après consentement)</h3>
+      <ul>
+        <li>Analytics non exemptée (p. ex. Google Analytics/GA4)</li>
+        <li>Réseaux sociaux (pixels LinkedIn, Meta, X, TikTok, etc.)</li>
+        <li>Publicité/retargeting (tags acquisition, AB testing externalisé, etc.)</li>
+      </ul>
+      <p className="muted" style={{ fontSize: '0.9em' }}>
+        En cas d'activation future, ajoutez le tableau détaillé (nom, finalité, durée, fournisseur) et conservez la preuve du consentement.
+      </p>
     </section>
 
     <section className="card">
-      <h2>4. Gestion depuis votre navigateur</h2>
-      <p>
-        Vous pouvez configurer votre navigateur pour bloquer/supprimer les cookies. Attention, cela peut altérer certaines fonctionnalités.
-      </p>
+      <h2>3. Gérer vos préférences</h2>
+      <ul>
+        <li><strong>Bandeau cookies à la première visite :</strong> Accepter, Refuser, Personnaliser.</li>
+        <li><strong>Pied de page :</strong> lien « Paramétrer les cookies » disponible à tout moment.</li>
+        <li><strong>Navigateurs :</strong> vous pouvez configurer votre navigateur pour bloquer/supprimer les cookies (voir l'aide de Chrome, Firefox, Safari, Edge).</li>
+      </ul>
+    </section>
+
+    <section className="card">
+      <h2>4. Durées de conservation</h2>
+      <ul>
+        <li><strong>Cookies strictement nécessaires :</strong> durée limitée au strict besoin (session/quelques heures ou jours).</li>
+        <li><strong>Preuve du consentement</strong> (si cookies non essentiels) : 6 mois (recommandation CNIL).</li>
+        <li><strong>Analytics exemptée :</strong> jusqu'à 13 mois.</li>
+      </ul>
     </section>
 
     <section className="card">
       <h2>5. Contact</h2>
       <p>
-        Pour toute question : <a href="mailto:contact@skillijob.com">contact@skillijob.com</a>.
+        Toute question relative aux cookies :{' '}
+        <a href="mailto:privacy@skillijob.fr">privacy@skillijob.fr</a> —{' '}
+        <a href="mailto:contact@skillijob.fr">contact@skillijob.fr</a>
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>6. Modifications</h2>
+      <p>
+        Cette politique peut évoluer. La date de mise à jour en haut de page fait foi.
       </p>
     </section>
   </>
@@ -265,167 +351,105 @@ const PolitiqueCookies = () => (
 const PolitiqueConfidentialite = () => (
   <>
     <h1>Politique de confidentialité</h1>
-    <p className="muted">Dernière mise à jour : 03/10/2025</p>
+    <p className="muted">Dernière mise à jour : 13 octobre 2025</p>
+
+    <section className="card">
+      <p>
+        La présente politique décrit de manière transparente si et comment <strong>SKILLIJOB</strong> traite vos données personnelles lorsque vous consultez la landing page « Candidat » (ci-après « la Landing Page »), sans création de compte ni formulaire à cette étape.
+      </p>
+      <p>
+        <strong>Résumé clair :</strong> sur cette Landing Page, aucune donnée personnelle n'est collectée via formulaire. Seules des informations techniques minimales peuvent être traitées pour assurer le fonctionnement, la sécurité et la mesure d'audience strictement nécessaire du Site. Aucun cookie non essentiel n'est déposé sans votre consentement (voir Politique de cookies).
+      </p>
+    </section>
 
     <section className="card">
       <h2>1. Responsable du traitement</h2>
       <p>
-        <strong>SKILLIJOB, SAS</strong> – Rue François 1er, 75008 Paris, France
+        <strong>SKILLIJOB</strong>
         <br />
-        RCS Paris – SIREN 980 918 858 – SIRET 980 918 858 00013
+        60 rue François 1er, 75008 Paris, France
         <br />
-        📧 <a href="mailto:contact@skillijob.com">contact@skillijob.com</a> – B2B uniquement.
+        📧 Contact : <a href="mailto:privacy@skillijob.fr">privacy@skillijob.fr</a>
       </p>
     </section>
 
     <section className="card">
-      <h2>2. Finalités et bases légales</h2>
-      <div className="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Finalité</th>
-              <th>Exemples</th>
-              <th>Base légale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Fourniture du service</td>
-              <td>Création de compte, accès espace candidats, livraison de dossiers</td>
-              <td>Exécution du contrat</td>
-            </tr>
-            <tr>
-              <td>Relation commerciale B2B</td>
-              <td>Prospection, démos, suivi client</td>
-              <td>Intérêt légitime (B2B)</td>
-            </tr>
-            <tr>
-              <td>Facturation & conformité</td>
-              <td>Devis, factures, obligations comptables</td>
-              <td>Obligation légale</td>
-            </tr>
-            <tr>
-              <td>Sécurité & prévention</td>
-              <td>Logs, lutte contre fraude/abus</td>
-              <td>Intérêt légitime</td>
-            </tr>
-            <tr>
-              <td>Amélioration produit</td>
-              <td>Statistiques d'usage, feedback</td>
-              <td>Intérêt légitime</td>
-            </tr>
-            <tr>
-              <td>Marketing avec consentement</td>
-              <td>Cookies non essentiels, newsletters opt-in</td>
-              <td>Consentement</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section className="card">
-      <h2>3. Données traitées</h2>
+      <h2>2. Données traitées à ce stade</h2>
       <p>
-        Données d'identification et professionnelles (nom, fonction, email pro, téléphone pro, entreprise), données d'utilisation (logs, pages, IP), contenus échangés (demandes, messages), documents transmis (CV, fiches de poste… si fournis).
+        <strong>Données techniques (journaux serveurs) :</strong> adresse IP (pouvant être anonymisée/abrégée si paramétrée), horodatages, URL consultées, user agent (navigateur, OS, appareil), pages de provenance, erreurs.
+      </p>
+      <p>
+        <strong>Cookies strictement nécessaires :</strong> voir la Politique de cookies.
+      </p>
+      <p>
+        <strong>Aucune donnée « formulaire »</strong> (identité, contact, CV, etc.) n'est collectée ici. Cette collecte interviendra exclusivement au moment du formulaire (2ᵉ étape) avec information et consentements dédiés.
       </p>
     </section>
 
     <section className="card">
-      <h2>4. Durées de conservation</h2>
-      <div className="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Catégorie</th>
-              <th>Durée</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Compte & contrat</td>
-              <td>Pendant la relation + 5 ans</td>
-            </tr>
-            <tr>
-              <td>Facturation</td>
-              <td>10 ans (obligation légale)</td>
-            </tr>
-            <tr>
-              <td>Prospection B2B</td>
-              <td>3 ans après dernier contact</td>
-            </tr>
-            <tr>
-              <td>Logs de sécurité</td>
-              <td>6 à 12 mois</td>
-            </tr>
-            <tr>
-              <td>Cookies</td>
-              <td>Voir Politique cookies</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>3. Finalités et bases légales</h2>
+      <ul>
+        <li>
+          <strong>Fonctionnement, sécurité, maintenance du Site</strong> (prévention fraude/abus, diagnostics) — <em>Intérêt légitime (art. 6(1)(f) RGPD)</em>.
+        </li>
+        <li>
+          <strong>Mesure d'audience strictement nécessaire</strong> (optionnelle), si outil exempté conforme (ex. Matomo auto-hébergé, IP anonymisée, pas de reciblage) — <em>Intérêt légitime</em>.
+        </li>
+        <li>
+          Toute analyse non essentielle (ex. GA4) est désactivée par défaut et soumise à votre consentement.
+        </li>
+      </ul>
     </section>
 
     <section className="card">
-      <h2>5. Destinataires & sous-traitants</h2>
+      <h2>4. Destinataires</h2>
       <p>
-        Données accessibles aux équipes habilitées de SKILLIJOB. Sous-traitants (hébergement, emailing, analytics, support) agissant selon nos instructions et engagements contractuels conformes au RGPD.
-      </p>
-      <div className="card warning-box">
-        <p>
-          <strong>Liste indicative (à compléter) :</strong>
-        </p>
-        <ul>
-          <li>
-            Hébergement : IONOS (<span className="muted">coordonnées exactes à compléter</span>)
-          </li>
-          <li>
-            Emailing/support : <span className="muted">[ex. Brevo/Sendinblue, Zendesk…]</span>
-          </li>
-          <li>
-            Analytics : <span className="muted">[ex. Matomo/GA4]</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section className="card">
-      <h2>6. Transferts hors UE</h2>
-      <p>
-        Encadrés par des garanties appropriées (CCT, pays adéquats, mesures complémentaires). Détails fournis sur demande.
+        Accès limité aux équipes autorisées de SKILLIJOB et à ses prestataires techniques (hébergement/maintenance) soumis à confidentialité. Aucun partage à des tiers publicitaires.
       </p>
     </section>
 
     <section className="card">
-      <h2>7. Droits des personnes</h2>
+      <h2>5. Transferts hors UE</h2>
       <p>
-        Accès, rectification, effacement, limitation, opposition (dont prospection), portabilité. Exercer vos droits :{' '}
-        <a href="mailto:contact@skillijob.com">contact@skillijob.com</a>. Réclamation : CNIL.
+        Par défaut, aucun transfert hors UE. Si un prestataire impliquait un transfert, SKILLIJOB mettrait en place les garanties appropriées (clauses contractuelles types, etc.) et vous en informerait.
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>6. Durées de conservation</h2>
+      <ul>
+        <li>
+          <strong>Journaux serveurs :</strong> 3 mois
+        </li>
+        <li>
+          <strong>Cookies nécessaires :</strong> durée strictement limitée au fonctionnement (voir Politique de cookies)
+        </li>
+      </ul>
+    </section>
+
+    <section className="card">
+      <h2>7. Vos droits</h2>
+      <p>
+        Conformément au RGPD et à la loi « Informatique et Libertés », vous disposez des droits d'accès, rectification, effacement, opposition, limitation, portabilité, ainsi que du droit de définir des directives post-mortem.
+      </p>
+      <p>
+        <strong>Exercice des droits :</strong> <a href="mailto:privacy@skillijob.fr">privacy@skillijob.fr</a> (pièce d'identité pouvant être demandée).
+        <br />
+        Réclamation possible auprès de la <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">CNIL</a>.
       </p>
     </section>
 
     <section className="card">
       <h2>8. Sécurité</h2>
       <p>
-        Mesures techniques et organisationnelles adaptées : chiffrement en transit, contrôle d'accès, journalisation, sauvegardes.
+        Mise en œuvre de mesures techniques et organisationnelles appropriées (chiffrement en transit, contrôle d'accès, journalisation sécurité, sauvegardes, cloisonnement). En cas de violation de données, notification conformément au RGPD si requis.
       </p>
     </section>
 
     <section className="card">
-      <h2>9. Cookies</h2>
+      <h2>9. Évolutions</h2>
       <p>
-        Voir Politique cookies. Les cookies non essentiels sont déposés avec votre consentement via notre gestionnaire.
-      </p>
-    </section>
-
-    <section className="card">
-      <h2>10. Contact RGPD</h2>
-      <p>
-        📧 <a href="mailto:contact@skillijob.com">contact@skillijob.com</a>
-        <br />
-        DPO : <span className="muted">[non désigné]</span>
+        Cette politique peut être mise à jour. La date en tête de document en atteste. En cas de changement majeur, une information spécifique pourra être affichée.
       </p>
     </section>
   </>
@@ -434,89 +458,182 @@ const PolitiqueConfidentialite = () => (
 // Composant CGV
 const CGV = () => (
   <>
-    <h1>Conditions Générales (B2B)</h1>
+    <h1>Conditions Essentielles — Vente en ligne (B2B)</h1>
     <p className="intro">
-      Les présentes conditions régissent les services fournis par <strong>SKILLIJOB, SAS</strong> aux clients professionnels (B2B).
+      <strong>SKILLIJOB</strong> — 60 rue François 1er, 75008 Paris — RCS Paris 980 918 858
+      <br />
+      Assistance : 09 70 19 67 02 • <a href="mailto:support@skilliplace.com">support@skilliplace.com</a>
+      <br />
+      <span className="muted">Version : 30/09/2025</span>
     </p>
 
     <section className="card">
-      <span className="badge">1. Objet</span>
+      <h2>1) Objet</h2>
       <p>
-        Accès à l'espace candidats, présélection, fourniture de dossiers complets, accompagnement de planification, et services associés.
+        Prestation de mise en relation qualifiée : consultation de profils anonymisés via l'Espace Candidats et déblocage de <strong>5 dossiers complets</strong> (CV, coordonnées, compte-rendu RH) en vue d'entretiens dans le cadre d'un recrutement réel et immédiat.
       </p>
     </section>
 
     <section className="card">
-      <span className="badge">2. Champ d'application</span>
-      <p>Réservé aux professionnels. Toute commande implique l'acceptation des présentes conditions.</p>
+      <h2>2) Processus</h2>
+      <ul>
+        <li>
+          <strong>Espace Candidats (gratuit) :</strong> le Client filtre et pré-sélectionne des profils.
+        </li>
+        <li>
+          <strong>Commande & paiement en ligne</strong> (CB Stripe) ou choix virement.
+        </li>
+        <li>
+          Le Client transmet à Skillijob les références des profils à débloquer.
+        </li>
+        <li>
+          Skillijob envoie les dossiers complets <strong>&lt; 24 h ouvrées</strong> (par dossier débloqué).
+        </li>
+      </ul>
     </section>
 
     <section className="card">
-      <span className="badge">3. Compte & accès</span>
-      <p>Le client est responsable de la confidentialité de ses identifiants et de l'exactitude des informations fournies.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">4. Commandes & prix</span>
-      <p>Les tarifs sont indiqués hors taxes. Les commandes sont fermes dès validation et paiement, sauf stipulation contraire.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">5. Paiement & facturation</span>
-      <p>Paiement selon les modalités convenues (en ligne ou facture). Retard de paiement : pénalités légales et indemnité forfaitaire de recouvrement.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">6. Livraison des dossiers</span>
-      <p>Les dossiers complets sont livrés dans les délais annoncés (ex. &lt; 24h après déblocage). Le client demeure responsable de ses décisions d'embauche.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">7. Engagements & limites</span>
-      <p>SKILLIJOB met en œuvre des moyens raisonnables. Aucune garantie d'embauche. Responsabilité limitée au montant payé sur la période contractuelle en cause, hors dommages indirects.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">8. Remplacement "no-show"</span>
-      <p>En cas de non-présentation/non-joignable sous 48h, application du remplacement 1-pour-1 selon les modalités de l'offre en vigueur.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">9. Propriété intellectuelle</span>
-      <p>Les contenus, marques et technologies demeurent la propriété de leurs titulaires. Aucun transfert de droits au-delà des licences d'usage nécessaires au service.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">10. Confidentialité</span>
-      <p>Chaque partie s'engage à préserver la confidentialité des informations de l'autre partie, pendant la relation et 3 ans après.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">11. Données personnelles</span>
-      <p>Traitements réalisés conformément au RGPD. Voir la Politique de confidentialité. Un accord de sous-traitance (art. 28 RGPD) peut s'appliquer si SKILLIJOB traite des données pour le compte du client.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">12. Force majeure</span>
-      <p>La responsabilité est écartée en cas de force majeure au sens du droit français.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">13. Durée, résiliation</span>
-      <p>Contrat valable pour la durée précisée à la commande. Résiliation anticipée selon conditions particulières le cas échéant.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">14. Droit applicable & litiges</span>
-      <p>Droit français. Compétence des tribunaux du ressort de la Cour d'appel de Paris.</p>
-    </section>
-
-    <section className="card">
-      <span className="badge">15. Informations légales</span>
+      <h2>3) Prix & paiement</h2>
       <p>
-        <strong>SKILLIJOB, SAS</strong> – Rue François 1er, 75008 Paris – RCS Paris – SIREN 980 918 858 – SIRET 980 918 858 00013 – Capital : 1 000 € –{' '}
-        <a href="mailto:contact@skillijob.com">contact@skillijob.com</a>
+        <strong>990 € HT</strong> (TVA en sus) pour 5 profils qualifiés.
       </p>
+      <ul>
+        <li>
+          <strong>CB (Stripe) :</strong> débit immédiat, facture automatique.
+        </li>
+        <li>
+          <strong>Virement :</strong> règlement reçu avant tout déblocage (RIB communiqué après commande).
+        </li>
+      </ul>
+      <p>
+        <strong>Aucun remboursement :</strong> la commande confirme l'ouverture du crédit et la mobilisation des équipes. En cas d'incident couvert par les garanties/SLA (articles 4–6), Skillijob applique remplacement et/ou prolongation du crédit, sans remboursement.
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>4) Délais & SLA</h2>
+      <ul>
+        <li>
+          <strong>Envoi d'un dossier débloqué :</strong> &lt; 24 h ouvrées après paiement + demande de déblocage.
+        </li>
+        <li>
+          <strong>Fraîcheur :</strong> profils revérifiés &lt; 48 h avant envoi.
+        </li>
+        <li>
+          <strong>Objectif :</strong> 95 % des envois dans le SLA.
+        </li>
+      </ul>
+    </section>
+
+    <section className="card">
+      <h2>5) Crédit & durée</h2>
+      <ul>
+        <li>
+          Crédit de <strong>5 déblocages</strong>, valable <strong>60 jours</strong> à compter de la commande.
+        </li>
+        <li>
+          Tant que le crédit n'est pas consommé, le Client peut modifier sa sélection et débloquer d'autres profils.
+        </li>
+      </ul>
+    </section>
+
+    <section className="card">
+      <h2>6) Garanties commerciales</h2>
+      <ul>
+        <li>
+          <strong>No-Show / Non-joignable 48 h :</strong> si un candidat débloqué est injoignable 48 h ouvrées après le premier contact du Client (preuves d'essais de contact) ou annule avant entretien, Skillijob fournit un remplacement 1-pour-1 sans frais.
+        </li>
+        <li>
+          <strong>Information caduque :</strong> si, au moment de l'envoi, une information clé (disponibilité/mobilité/prétentions) est caduque, Skillijob remplace le dossier.
+        </li>
+        <li>
+          Les garanties ouvrent droit à <strong>remplacement/prolongation du crédit</strong>, aucun remboursement.
+        </li>
+      </ul>
+    </section>
+
+    <section className="card">
+      <h2>7) Engagements du Client (recrutement réel)</h2>
+      <p>Le Client déclare :</p>
+      <ul>
+        <li>être en <strong>recrutement réel</strong> (poste ouvert, décisionnaire identifié, modalités connues) ;</li>
+        <li>contacter dans les meilleurs délais (recommandé &lt; 48 h ouvrées) tout candidat débloqué ;</li>
+        <li>fournir, en cas de demande de remplacement, les preuves d'essais de contact (emails, appels, logs) ;</li>
+        <li>utiliser les données reçues uniquement en interne, sans cession à des tiers ;</li>
+        <li>respecter la non-discrimination et la réglementation sociale.</li>
+      </ul>
+      <p>
+        <strong>Important :</strong> l'absence de prise de contact rapide peut faire tomber la garantie « Non-joignable 48 h ».
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>8) Étendue du service</h2>
+      <p>
+        <strong>Inclus :</strong> Espace Candidats (consultation), 5 déblocages, envoi &lt; 24 h, revérification &lt; 48 h, accompagnement planif' (collecte des disponibilités).
+      </p>
+      <p>
+        <strong>Non inclus :</strong> chasse sur mesure, tests techniques/psychométriques, garantie d'embauche, multi-diffusion illimitée (booster possible sur devis séparé).
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>9) RGPD & confidentialité</h2>
+      <p>
+        Avant déblocage : profils anonymisés. Après : transmission sécurisée (CV, coordonnées, notes RH). Conservation limitée (mission + obligations légales). Droit de retrait sur demande. Usage interne exclusivement.
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>10) Responsabilité</h2>
+      <p>
+        Skillijob fournit un service de mise en relation qualifiée ; <strong>aucune garantie d'embauche</strong>. Responsabilité limitée au montant HT payé pour l'offre concernée ; aucun dommage indirect indemnisable.
+      </p>
+    </section>
+
+    <section className="card">
+      <h2>11) Droit applicable – Litiges</h2>
+      <p>
+        Droit français – tentative amiable préalable – Tribunal de commerce de Paris compétent.
+      </p>
+    </section>
+
+    <section className="card" style={{ backgroundColor: '#f8f9fa', border: '2px solid #0066CC', padding: '1.5rem' }}>
+      <h3 style={{ marginTop: 0, color: '#0066CC' }}>Case à cocher (checkout)</h3>
+      <div style={{ marginBottom: '1rem' }}>
+        <label style={{ display: 'flex', alignItems: 'flex-start', cursor: 'pointer' }}>
+          <input type="checkbox" style={{ marginRight: '0.75rem', marginTop: '0.25rem' }} disabled />
+          <span style={{ color: '#1E293B', fontSize: '0.95rem', lineHeight: '1.6' }}>
+            J'ai lu et j'accepte les Conditions Essentielles et les CGV (liens), ainsi que la Politique RGPD (lien).
+          </span>
+        </label>
+      </div>
+      <div>
+        <label style={{ display: 'flex', alignItems: 'flex-start', cursor: 'pointer' }}>
+          <input type="checkbox" style={{ marginRight: '0.75rem', marginTop: '0.25rem' }} disabled />
+          <span style={{ color: '#1E293B', fontSize: '0.95rem', lineHeight: '1.6' }}>
+            Je confirme être en <strong style={{ color: '#0066CC' }}>RECRUTEMENT RÉEL</strong> et m'engage à contacter rapidement les candidats débloqués.
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <section className="card" style={{ backgroundColor: '#fffbea', borderLeft: '4px solid #FFC845', padding: '1.5rem' }}>
+      <h3 style={{ marginTop: 0, color: '#1E293B' }}>Mentions sous le bouton « Payer »</h3>
+      <ul style={{ marginBottom: 0, paddingLeft: 0, listStyle: 'none' }}>
+        <li style={{ padding: '8px 0', paddingLeft: '24px', position: 'relative', color: '#1E293B' }}>
+          <span style={{ position: 'absolute', left: '8px', color: '#FFC845', fontWeight: 'bold' }}>•</span>
+          Paiement sécurisé Stripe (CB) ou virement avant déblocage
+        </li>
+        <li style={{ padding: '8px 0', paddingLeft: '24px', position: 'relative', color: '#1E293B' }}>
+          <span style={{ position: 'absolute', left: '8px', color: '#FFC845', fontWeight: 'bold' }}>•</span>
+          Dossiers envoyés &lt; 24 h après déblocage • Crédit 60 jours
+        </li>
+        <li style={{ padding: '8px 0', paddingLeft: '24px', position: 'relative', color: '#1E293B' }}>
+          <span style={{ position: 'absolute', left: '8px', color: '#FFC845', fontWeight: 'bold' }}>•</span>
+          Remplacement 1-pour-1 si no-show/non-joignable 48 h • Aucun remboursement
+        </li>
+      </ul>
     </section>
   </>
 );

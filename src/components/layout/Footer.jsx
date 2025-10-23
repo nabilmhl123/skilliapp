@@ -47,10 +47,10 @@ const Footer = () => {
             <a href="tel:+33970196702" className="footer-link">
               📞 09 70 19 67 02
             </a>
-            <a href="mailto:contact@skillijob.com" className="footer-link">
-              ✉️ contact@skillijob.com
+            <a href="mailto:contact@skillijob.fr" className="footer-link">
+              ✉️ contact@skillijob.fr
             </a>
-            <p>📍 Rue François 1er, 75008 Paris</p>
+            <p>📍 60 rue François 1er, 75008 Paris</p>
           </div>
 
           {/* Social Media Section */}
