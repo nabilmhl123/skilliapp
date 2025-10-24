@@ -24,7 +24,7 @@
   justify-content: center;
   padding: 60px 40px;
   position: relative;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .brand-panel::before {
@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 40px;
+  padding: 40px 40px;
   background: var(--bg);
   overflow-y: auto;
 }
@@ -156,22 +156,23 @@
 .form-container {
   max-width: 400px;
   width: 100%;
+  margin: auto 0;
 }
 
 .form-header {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .form-header h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--text);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .form-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
@@ -180,7 +181,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   background: var(--white);
   padding: 4px;
   border-radius: 10px;
@@ -220,34 +221,34 @@
 
 /* Form */
 .auth-form {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text);
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px 14px;
+  padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: all var(--transition-fast);
   background: var(--white);
   color: var(--text);
@@ -285,7 +286,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .checkbox-label {
@@ -317,7 +318,7 @@
 }
 
 .form-terms {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .form-terms .checkbox-label {
@@ -341,12 +342,12 @@
 /* Submit Button */
 .auth-submit-btn {
   width: 100%;
-  padding: 12px;
+  padding: 11px;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
   color: var(--white);
   border: none;
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -367,9 +368,9 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 24px 0;
+  margin: 16px 0;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .auth-divider::before,
@@ -384,21 +385,21 @@
 .social-auth {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 6px;
+  padding: 9px 12px;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text);
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -417,13 +418,13 @@
 /* Form Footer */
 .form-footer {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid var(--line);
 }
 
 .form-footer p {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .switch-mode-link {
@@ -431,7 +432,7 @@
   border: none;
   color: var(--primary);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: color var(--transition-fast);
 }
