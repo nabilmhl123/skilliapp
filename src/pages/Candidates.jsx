@@ -1,12 +1,15 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import HeroSection from '../components/shared/HeroSection';
 import Button from '../components/shared/Button';
 import PartnerLogo from '../components/shared/PartnerLogo';
 import Icons from '../components/shared/Icons';
+import CandidateForm from '../components/forms/CandidateForm';
 import candidatImage from '../assets/images/image_candidat.png';
 import './Candidates.css';
 
 const Candidates = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const partners = [
     { name: 'Manpower', color: '#0050A0', domain: 'manpower.fr' },
     { name: 'Randstad', color: '#003DA5', domain: 'randstad.fr' },
@@ -46,8 +49,7 @@ const Candidates = () => {
       text: 'Déposer mon CV',
       variant: 'primary',
       size: 'large',
-      href: 'https://form.jotform.com/252881502955059',
-      external: true
+      onClick: () => setIsFormOpen(true)
     },
     {
       text: '09 70 19 67 02',
@@ -240,7 +242,7 @@ const Candidates = () => {
                   <div className="cta-highlight-badge">Recommandé</div>
                   <h3 className="cta-action-title">Déposer mon CV</h3>
                   <p className="cta-action-desc">Notre équipe RH optimise votre profil et vous met en relation avec les meilleurs recruteurs</p>
-                  <Button variant="primary" size="large" href="https://form.jotform.com/252881502955059" external>
+                  <Button variant="primary" size="large" onClick={() => setIsFormOpen(true)}>
                     Déposer mon CV
                   </Button>
                 </div>
@@ -257,6 +259,11 @@ const Candidates = () => {
           </div>
         </div>
       </section>
+
+      {/* Candidate Form Modal */}
+      <AnimatePresence>
+        {isFormOpen && <CandidateForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />}
+      </AnimatePresence>
     </main>
   );
 };

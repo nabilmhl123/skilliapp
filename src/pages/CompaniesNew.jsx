@@ -149,8 +149,6 @@ const CompaniesNew = () => {
         subtitle="Contactez 5 profils prêts à l'entretien. Vous n'avez plus qu'à choisir."
         badges={heroBadges}
         buttons={heroButtons}
-        image={candidatImage}
-        imageAlt="Recrutement Skillijob – candidats qualifiés"
         note="Accès immédiat à l'Espace Candidats • Envoi < 24h après déblocage"
       />
 
