@@ -296,6 +296,129 @@ const CompaniesNew = () => {
         </div>
       </section>
 
+      {/* Guarantees Section */}
+      <section className="guarantees-main-section">
+        <div className="container">
+          <h2 className="guarantees-main-title">Garanties puissantes</h2>
+
+          <div className="guarantees-row">
+            <article className="guarantee-card">
+              <svg className="card-shape-svg" viewBox="0 0 300 350" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <clipPath id="octagon-clip">
+                    <polygon points="90,10 210,10 290,90 290,210 210,290 90,290 10,210 10,90" />
+                  </clipPath>
+                </defs>
+                <polygon
+                  points="90,10 210,10 290,90 290,210 210,290 90,290 10,210 10,90"
+                  fill="white"
+                  stroke="#6C00FF"
+                  strokeWidth="6"
+                />
+              </svg>
+              <div className="card-content">
+                <h4 className="card-title">Garantie de résultat</h4>
+                <p className="card-text">
+                  Nous garantissons le nombre de candidats prévus dans le délai convenu, ou nous continuons sans frais.
+                </p>
+                <div className="card-check">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article className="guarantee-card">
+              <svg className="card-shape-svg" viewBox="0 0 300 350" preserveAspectRatio="xMidYMid meet">
+                <polygon
+                  points="90,10 210,10 290,90 290,210 210,290 90,290 10,210 10,90"
+                  fill="white"
+                  stroke="#6C00FF"
+                  strokeWidth="6"
+                />
+              </svg>
+              <div className="card-content">
+                <h4 className="card-title">Garantie remplacement</h4>
+                <p className="card-text">
+                  Si un candidat ne convient pas ou ne se présente pas, nous le remplaçons gratuitement sous 48h.
+                </p>
+                <div className="card-check">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article className="guarantee-card">
+              <svg className="card-shape-svg" viewBox="0 0 300 350" preserveAspectRatio="xMidYMid meet">
+                <polygon
+                  points="90,10 210,10 290,90 290,210 210,290 90,290 10,210 10,90"
+                  fill="white"
+                  stroke="#6C00FF"
+                  strokeWidth="6"
+                />
+              </svg>
+              <div className="card-content">
+                <h4 className="card-title">Garantie qualité</h4>
+                <p className="card-text">
+                  Chaque profil est pré-qualifié par nos équipes RH : expérience validée, disponibilité confirmée.
+                </p>
+                <div className="card-check">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div className="highlights">
+            <h3 className="highlights-title">En clair, Skillijob c'est :</h3>
+            <div className="highlights-row">
+              <div className="highlight-item">
+                <div className="icon-wrapper">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6C00FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                    <path d="M12 18V6"></path>
+                  </svg>
+                </div>
+                <p className="kpi-small">Jusqu'à</p>
+                <p className="kpi-large">4 000 €*</p>
+                <p className="kpi-desc">d'Économies par recrutement vs cabinet classique</p>
+              </div>
+
+              <div className="highlight-item">
+                <div className="icon-wrapper">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6B3BFF" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <p className="kpi-small">Jusqu'à</p>
+                <p className="kpi-large">50 H</p>
+                <p className="kpi-desc">de gain de temps sur le processus de recrutement</p>
+              </div>
+
+              <div className="highlight-item">
+                <div className="icon-wrapper">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6B3BFF" strokeWidth="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
+                  </svg>
+                </div>
+                <p className="kpi-small">Plus de</p>
+                <p className="kpi-large">3 000</p>
+                <p className="kpi-desc">profils qualifiés disponibles dans nos secteurs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <PricingSection />
 
@@ -318,23 +441,23 @@ const CompaniesNew = () => {
             </div>
             <div className="about-stats">
               <div className="facts">
-                <span className="tag">EN CHIFFRES</span>
+                <span className="tag">20+ ans d’expérience terrain cumulée</span>
                 <div className="facts-grid">
                   <div className="fact">
                     <strong>3000+</strong>
-                    <span>Profils qualifiés</span>
+                    <span>Profils activés</span>
                   </div>
                   <div className="fact">
-                    <strong>80%</strong>
-                    <span>Recrutements {'<'} 3 sem</span>
+                    <strong>8</strong>
+                    <span>Secteurs couverts</span>
                   </div>
                   <div className="fact">
-                    <strong>24h</strong>
-                    <span>Livraison garantie</span>
+                    <strong>{'<'}24h</strong>
+                    <span>Après déblocage</span>
                   </div>
                   <div className="fact">
-                    <strong>0€</strong>
-                    <span>Commission embauche</span>
+                    <strong>98%</strong>
+                    <span>de Satisfaction</span>
                   </div>
                 </div>
               </div>
