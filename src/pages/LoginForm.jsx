@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMutation } from 'convex/react';
+import { useNavigate } from 'react-router-dom';
+import { api } from '../../convex/_generated/api';
 import Icons from '../components/shared/Icons';
 import './LoginForm.css';
 
@@ -16,18 +19,88 @@ const LoginForm = () => {
     phone: '',
     position: ''
   });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+  const signup = useMutation(api.auth.signup);
+  const signin = useMutation(api.auth.signin);
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    setError(''); // Clear error when user types
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { userType, authMode, formData });
-    // TODO: Implement authentication logic
+    setError('');
+    setLoading(true);
+
+    try {
+      if (authMode === 'signup') {
+        // Validation pour l'inscription
+        if (formData.password !== formData.confirmPassword) {
+          setError('Les mots de passe ne correspondent pas');
+          setLoading(false);
+          return;
+        }
+
+        if (formData.password.length < 6) {
+          setError('Le mot de passe doit contenir au moins 6 caractères');
+          setLoading(false);
+          return;
+        }
+
+        // Appel à la mutation signup
+        const result = await signup({
+          email: formData.email,
+          password: formData.password,
+          userType,
+          firstName: formData.firstName || undefined,
+          lastName: formData.lastName || undefined,
+          companyName: formData.companyName || undefined,
+          phone: formData.phone || undefined,
+          position: formData.position || undefined,
+        });
+
+        // Stocker le token dans localStorage
+        localStorage.setItem('authToken', result.token);
+        localStorage.setItem('userId', result.userId);
+        localStorage.setItem('userType', result.userType);
+
+        // Rediriger vers le dashboard approprié
+        if (result.userType === 'candidate') {
+          navigate('/dashboard-candidat');
+        } else {
+          navigate('/dashboard-entreprise');
+        }
+      } else {
+        // Connexion
+        const result = await signin({
+          email: formData.email,
+          password: formData.password,
+        });
+
+        // Stocker le token dans localStorage
+        localStorage.setItem('authToken', result.token);
+        localStorage.setItem('userId', result.userId);
+        localStorage.setItem('userType', result.userType);
+
+        // Rediriger vers le dashboard approprié
+        if (result.userType === 'candidate') {
+          navigate('/dashboard-candidat');
+        } else {
+          navigate('/dashboard-entreprise');
+        }
+      }
+    } catch (err) {
+      setError(err.message || 'Une erreur est survenue');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const resetForm = () => {
@@ -41,6 +114,7 @@ const LoginForm = () => {
       phone: '',
       position: ''
     });
+    setError('');
   };
 
   const switchAuthMode = () => {
@@ -161,6 +235,21 @@ const LoginForm = () => {
               Entreprise
             </button>
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div style={{
+              padding: '12px',
+              marginBottom: '16px',
+              backgroundColor: '#fee',
+              border: '1px solid #fcc',
+              borderRadius: '8px',
+              color: '#c33',
+              fontSize: '14px'
+            }}>
+              {error}
+            </div>
+          )}
 
           {/* Form */}
           <form className="auth-form" onSubmit={handleSubmit}>
@@ -287,7 +376,7 @@ const LoginForm = () => {
             <div className="form-group">
               <label htmlFor="email">Email {authMode === 'signup' && '*'}</label>
               <div className="input-with-icon">
-                <Icons.Mail size={20} className="input-icon" />
+                {/* <Icons.Mail size={20} className="input-icon" /> */}
                 <input
                   type="email"
                   id="email"
@@ -356,8 +445,8 @@ const LoginForm = () => {
               </div>
             )}
 
-            <button type="submit" className="auth-submit-btn">
-              {authMode === 'signin' ? 'Se connecter' : "S'inscrire"}
+            <button type="submit" className="auth-submit-btn" disabled={loading}>
+              {loading ? 'Chargement...' : (authMode === 'signin' ? 'Se connecter' : "S'inscrire")}
             </button>
           </form>
 

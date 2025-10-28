@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import ChatBot from './components/layout/ChatBot';
 import NewsletterPopup from './components/NewsletterPopup';
 import ScrollToTop from './components/ScrollToTop';
+import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Candidates from './pages/Candidates';
 import CompaniesNew from './pages/CompaniesNew';
@@ -13,6 +14,8 @@ import LoginForm from './pages/LoginForm';
 import DashboardCandidat from './pages/DashboardCandidat';
 import DashboardEntreprise from './pages/DashboardEntreprise';
 import Paiements from './pages/Paiements';
+import Profile from './pages/Profile';
+import FAQ from './pages/FAQ';
 import './styles/globals.css';
 
 function AppContent() {
@@ -29,10 +32,40 @@ function AppContent() {
         <Route path="/candidats" element={<Candidates />} />
         <Route path="/entreprises" element={<CompaniesNew />} />
         <Route path="/espace-candidats" element={<EspaceCandidats />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/dashboard-candidat" element={<DashboardCandidat />} />
-        <Route path="/dashboard-entreprise" element={<DashboardEntreprise />} />
-        <Route path="/paiements" element={<Paiements />} />
+        <Route
+          path="/dashboard-candidat"
+          element={
+            <ProtectedRoute allowedUserTypes={['candidate']}>
+              <DashboardCandidat />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard-entreprise"
+          element={
+            <ProtectedRoute allowedUserTypes={['company']}>
+              <DashboardEntreprise />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/paiements"
+          element={
+            <ProtectedRoute>
+              <Paiements />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
 
       {!isAuthPage && !isDashboardPage && <Footer />}

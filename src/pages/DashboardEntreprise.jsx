@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Icons from '../components/shared/Icons';
+import ProfileSection from '../components/dashboard/ProfileSection';
 import './DashboardEntreprise.css';
 
 const DashboardEntreprise = () => {
@@ -465,16 +466,7 @@ const DashboardEntreprise = () => {
 
   const renderCompanyProfile = () => (
     <section className="opportunities-section">
-      <div className="section-header"><h2>🏢 Profil Entreprise</h2></div>
-      <div className="dashboard-section">
-        <h2>Informations de l'Entreprise</h2>
-        <div style={{ display: 'grid', gap: '1rem' }}>
-          <div><strong>Nom:</strong> Tech Corp</div>
-          <div><strong>Secteur:</strong> Technologies de l'information</div>
-          <div><strong>Taille:</strong> 50-200 employés</div>
-          <div><strong>Localisation:</strong> Paris, France</div>
-        </div>
-      </div>
+      <ProfileSection />
     </section>
   );
 
