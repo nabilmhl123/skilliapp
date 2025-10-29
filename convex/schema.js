@@ -39,4 +39,12 @@ export default defineSchema({
   })
     .index("by_token", ["token"])
     .index("by_userId", ["userId"]),
+
+  // Inscriptions à la newsletter
+  newsletters: defineTable({
+    email: v.string(),
+    subscribedAt: v.number(),
+    source: v.optional(v.string()), // 'popup', 'footer', etc.
+  })
+    .index("by_email", ["email"]),
 });

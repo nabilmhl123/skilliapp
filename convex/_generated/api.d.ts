@@ -9,6 +9,7 @@
  */
 
 import type * as auth from "../auth.js";
+import type * as newsletter from "../newsletter.js";
 
 import type {
   ApiFromModules,
@@ -26,6 +27,7 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   auth: typeof auth;
+  newsletter: typeof newsletter;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 

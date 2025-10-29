@@ -16,6 +16,7 @@ import DashboardEntreprise from './pages/DashboardEntreprise';
 import Paiements from './pages/Paiements';
 import Profile from './pages/Profile';
 import FAQ from './pages/FAQ';
+import NewsletterAdmin from './pages/NewsletterAdmin';
 import './styles/globals.css';
 
 function AppContent() {
@@ -61,6 +62,10 @@ function AppContent() {
               <Profile />
             </ProtectedRoute>
           }
+        />
+        <Route
+          path="/newsletter-admin"
+          element={<NewsletterAdmin />}
         />
       </Routes>
 
