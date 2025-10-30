@@ -318,14 +318,14 @@ const CompaniesNew = () => {
                   <span>04</span>
                 </div>
                 <div className="milestone-content">
-                  <h3 className="milestone-title">ENTRETIEN</h3>
+                  <h3 className="milestone-title">RENCONTRER</h3>
                   {/* <p className="milestone-desc">Contactez directement vos candidats préqualifiés</p> */}
                 </div>
               </div>
 
               <div className="milestone" data-position="top">
                 <div className="milestone-content">
-                  <h3 className="milestone-title">RECRUTEMENT</h3>
+                  <h3 className="milestone-title">RECRUTER</h3>
                   {/* <p className="milestone-desc">Embauchez en moins de 30 jours garanti</p> */}
                 </div>
                 <div className="milestone-circle">
