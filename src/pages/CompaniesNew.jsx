@@ -124,7 +124,7 @@ const CompaniesNew = () => {
       text: 'Déposer une offre d\'emploi',
       variant: 'yellow',
       size: 'large',
-      href: 'https://form.jotform.com/252922402753050',
+      href: 'https://04bhw4ay.rcld.app/dashboard/#/nc/form/42ed82b6-a0b5-40ee-b688-e3a90268657d',
       external: true
     }
   ];
