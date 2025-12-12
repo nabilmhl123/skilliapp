@@ -10,8 +10,14 @@ skilli/
 │   ├── convex/              # Backend Convex
 │   │   ├── _generated/      # Fichiers générés automatiquement
 │   │   ├── auth.js         # Authentification et gestion utilisateurs
+│   │   ├── candidates.js   # Gestion candidats
+│   │   ├── jobs.js         # Gestion offres d'emploi
 │   │   ├── schema.js       # Schéma de base de données
 │   │   └── newsletter.js   # Gestion newsletter
+│   ├── scripts/            # Scripts utilitaires
+│   │   ├── test-auth.js    # Tests authentification
+│   │   ├── test-dashboard.js # Tests dashboard
+│   │   └── import-candidates.js # Import de données
 │   ├── public/             # Assets statiques
 │   ├── src/
 │   │   ├── components/     # Composants réutilisables
@@ -34,7 +40,6 @@ skilli/
 │   ├── package.json
 │   ├── vite.config.js
 │   └── index.html
-├── backend/                # API backend (si nécessaire)
 ├── dashboards/            # Dashboard d'administration (Vite)
 │   ├── src/
 │   │   └── App.jsx
