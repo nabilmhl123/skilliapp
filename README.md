@@ -1,191 +1,292 @@
-# SkilliApp
+# Skillijob - Site Web React.js
 
-Une plateforme complète de recrutement et de recherche d'emploi construite avec React, Convex, et Vite.
+Site web moderne et performant pour Skillijob, la plateforme qui connecte candidats et entreprises.
 
-## Architecture du Projet
+## 🚀 Technologies utilisées
+
+- **React 18** - Bibliothèque JavaScript pour l'interface utilisateur
+- **React Router DOM** - Gestion de la navigation
+- **Framer Motion** - Animations fluides et modernes
+- **Vite** - Build tool ultra-rapide
+- **CSS3** - Styles personnalisés avec variables CSS
+- **Convex** - Backend-as-a-Service pour l'authentification et la base de données
+- **bcrypt.js** - Hachage sécurisé des mots de passe
+
+## 📁 Structure du projet
 
 ```
-skilli/
-├── skillijob-react/          # Application principale React
-│   ├── convex/              # Backend Convex
-│   │   ├── _generated/      # Fichiers générés automatiquement
-│   │   ├── auth.js         # Authentification et gestion utilisateurs
-│   │   ├── candidates.js   # Gestion candidats
-│   │   ├── jobs.js         # Gestion offres d'emploi
-│   │   ├── schema.js       # Schéma de base de données
-│   │   └── newsletter.js   # Gestion newsletter
-│   ├── scripts/            # Scripts utilitaires
-│   │   ├── test-auth.js    # Tests authentification
-│   │   ├── test-dashboard.js # Tests dashboard
-│   │   └── import-candidates.js # Import de données
-│   ├── public/             # Assets statiques
-│   ├── src/
-│   │   ├── components/     # Composants réutilisables
-│   │   │   ├── shared/     # Composants partagés (Button, Card, etc.)
-│   │   │   ├── layout/     # Layout (Navbar, Footer, etc.)
-│   │   │   ├── home/       # Composants page d'accueil
-│   │   │   ├── forms/      # Composants de formulaires
-│   │   │   ├── dashboard/  # Composants dashboard
-│   │   │   └── pricing/    # Composants tarification
-│   │   ├── pages/          # Pages de l'application
-│   │   │   ├── LoginForm.jsx       # Page de connexion/inscription
-│   │   │   ├── DashboardCandidat.jsx   # Dashboard candidat
-│   │   │   ├── DashboardEntreprise.jsx # Dashboard entreprise
-│   │   │   ├── Home.jsx              # Page d'accueil
-│   │   │   └── [autres pages...]
-│   │   ├── styles/         # Styles globaux et variables
-│   │   ├── hooks/          # Hooks personnalisés
-│   │   ├── utils/          # Utilitaires
-│   │   └── data/           # Données statiques
-│   ├── package.json
-│   ├── vite.config.js
-│   └── index.html
-├── dashboards/            # Dashboard d'administration (Vite)
-│   ├── src/
-│   │   └── App.jsx
-│   ├── package.json
-│   └── vite.config.js
+skillijob-react/
+├── public/                  # Fichiers statiques
+│   ├── logo-skillijob.png
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── layout/         # Composants de mise en page
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── ChatBot.jsx
+│   │   ├── home/           # Composants de la page d'accueil
+│   │   │   ├── Hero.jsx
+│   │   │   ├── ProblemSection.jsx
+│   │   │   └── SectorsSection.jsx
+│   │   └── shared/         # Composants réutilisables
+│   │       ├── Button.jsx
+│   │       ├── Card.jsx
+│   │       └── Modal.jsx
+│   ├── pages/              # Pages principales
+│   │   ├── Home.jsx
+│   │   ├── Candidates.jsx
+│   │   └── Companies.jsx
+│   ├── styles/             # Styles globaux
+│   │   ├── globals.css
+│   │   └── variables.css
+│   ├── App.jsx             # Composant principal
+│   └── main.jsx            # Point d'entrée
+├── index.html              # Template HTML
+├── package.json            # Dépendances
+├── vite.config.js          # Configuration Vite
 └── README.md
 ```
 
-## Fonctionnalités
-
-### Pour les Candidats
-- Inscription et connexion sécurisées
-- Profil candidat complet (CV, expériences, formations)
-- Recherche d'offres d'emploi
-- Suivi des candidatures
-- Alertes emploi personnalisées
-- Messagerie avec les recruteurs
-
-### Pour les Entreprises
-- Publication d'offres d'emploi
-- Gestion des candidatures reçues
-- Pipeline de recrutement
-- Analytiques et statistiques
-- Gestion d'équipe
-- Base de candidats qualifiés
-
-### Fonctionnalités Communes
-- Authentification JWT
-- Interface responsive
-- Newsletter
-- Support multilingue (FR/EN)
-
-## Technologies Utilisées
-
-### Frontend
-- **React 18** - Bibliothèque JavaScript pour interfaces utilisateur
-- **Vite** - Outil de build rapide
-- **Framer Motion** - Animations
-- **React Router** - Routage
-- **CSS Modules** - Styles modulaires
-
-### Backend
-- **Convex** - Backend-as-a-Service
-- **Authentication** - Gestion utilisateurs et sessions
-- **Real-time Database** - Base de données temps réel
-
-### Sécurité
-- Hashage des mots de passe (PBKDF2)
-- Rate limiting
-- Validation des données
-- Sessions sécurisées
-
-## Installation et Configuration
+## 🛠️ Installation
 
 ### Prérequis
-- Node.js 18+
+
+- Node.js (version 16 ou supérieure)
 - npm ou yarn
-- Compte Convex
 
-### Installation
+### Étapes d'installation
 
-1. **Cloner le repository**
+1. **Installer les dépendances**
+
 ```bash
-git clone https://github.com/nabilmhl123/skilliapp.git
-cd skilliapp
-```
-
-2. **Installer les dépendances**
-```bash
-# Application principale
 cd skillijob-react
-npm install
-
-# Dashboard admin (optionnel)
-cd ../dashboards
 npm install
 ```
 
-3. **Configuration Convex**
-```bash
-cd skillijob-react
-npx convex dev
-```
+2. **Lancer le serveur de développement**
 
-4. **Variables d'environnement**
-Créer un fichier `.env` dans `skillijob-react/` :
-```env
-VITE_CONVEX_URL=votre_url_convex
-```
-
-5. **Démarrer l'application**
 ```bash
 npm run dev
 ```
 
-## Scripts Disponibles
+Le site sera accessible sur `http://localhost:3000`
 
-### skillijob-react
-- `npm run dev` - Démarre le serveur de développement
-- `npm run build` - Build pour la production
-- `npm run preview` - Prévisualisation du build
-- `npm run convex:dev` - Démarre Convex en mode développement
+3. **Build pour la production**
 
-### dashboards
-- `npm run dev` - Démarre le dashboard admin
-
-## Structure de la Base de Données
-
-### Tables Convex
-- `users` - Utilisateurs (candidats/entreprises)
-- `sessions` - Sessions utilisateur
-- `userProfiles` - Profils détaillés
-- `jobOffers` - Offres d'emploi
-- `applications` - Candidatures
-- `messages` - Messagerie
-- `notifications` - Notifications
-- `newsletters` - Abonnements newsletter
-
-## Déploiement
-
-### Production
 ```bash
 npm run build
-npx convex deploy
 ```
 
-### Plateformes Supportées
-- Vercel
-- Netlify
-- Railway
-- Self-hosted
+Les fichiers optimisés seront générés dans le dossier `dist/`
 
-## Contribution
+4. **Prévisualiser le build de production**
 
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+```bash
+npm run preview
+```
 
-## Licence
+## 🎨 Personnalisation
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+### Couleurs
 
-## Contact
+Les couleurs sont définies dans `/src/styles/variables.css` :
 
-Nabil MHL - nabil@example.com
+```css
+:root {
+  --primary: #6C00FF;        /* Violet principal */
+  --primary-2: #6334AF;      /* Violet foncé */
+  --secondary: #F59E0B;      /* Orange/Or */
+  --secondary-2: #EAB308;    /* Jaune doré */
+}
+```
 
-Lien du projet: [https://github.com/nabilmhl123/skilliapp](https://github.com/nabilmhl123/skilliapp)
+### Images
+
+Placez vos images dans le dossier `/public/` :
+
+- `logo-skillijob.png` - Logo principal (recommandé : 200x200px)
+- `hero-image.png` - Image de la section hero
+- `favicon.ico` - Icône du site
+
+## 📄 Pages disponibles
+
+### Pages Publiques
+- `/` - Page d'accueil
+- `/candidats` - Page dédiée aux candidats
+- `/entreprises` - Page dédiée aux entreprises
+- `/login` - Connexion et inscription
+
+### Pages Protégées (Authentification requise)
+- `/dashboard-candidat` - Dashboard pour les candidats
+- `/dashboard-entreprise` - Dashboard pour les entreprises
+- `/profile` - Gestion du profil utilisateur
+- `/paiements` - Gestion des paiements
+
+Pour plus d'informations sur l'authentification, voir [SECURITY_FEATURES.md](SECURITY_FEATURES.md)
+
+## 🧩 Composants principaux
+
+### Button
+
+Bouton réutilisable avec plusieurs variantes :
+
+```jsx
+<Button variant="primary" size="large">
+  Cliquez ici
+</Button>
+```
+
+Variants : `primary`, `secondary`, `outline`, `ghost`
+Sizes : `small`, `medium`, `large`
+
+### Card
+
+Carte avec animations et sous-composants :
+
+```jsx
+<Card gradient hover>
+  <Card.Header>
+    <Card.Label>Titre</Card.Label>
+  </Card.Header>
+  <Card.Body>
+    <p>Contenu</p>
+  </Card.Body>
+</Card>
+```
+
+### Modal
+
+Modal avec animations :
+
+```jsx
+<Modal isOpen={isOpen} onClose={handleClose} title="Titre">
+  Contenu du modal
+</Modal>
+```
+
+## 🎯 Fonctionnalités
+
+### ✅ Implémenté
+
+- Navigation responsive avec menu mobile
+- Animations fluides avec Framer Motion
+- Chatbot intégré avec Jotform
+- Design moderne et professionnel
+- SEO optimisé
+- Performance optimisée
+
+### ✅ Nouvellement ajouté (v1.1.0)
+
+- **Système d'authentification complet** avec Convex
+- **Hachage sécurisé des mots de passe** (bcrypt)
+- **Dashboard candidat/entreprise** avec protection des routes
+- **Espace de gestion des profils** avec modification et changement de mot de passe
+- **Hook personnalisé useAuth** pour une utilisation simplifiée
+- **Protection avancée des routes** par type d'utilisateur
+
+### 🔜 À venir
+
+- Page de paiement
+- Upload de CV pour les candidats
+- Publication d'offres pour les entreprises
+- Système de matching candidat/entreprise
+- Messagerie interne
+
+## 📱 Responsive Design
+
+Le site est entièrement responsive et optimisé pour :
+
+- Desktop (> 1024px)
+- Tablette (768px - 1024px)
+- Mobile (< 768px)
+
+## 🚀 Déploiement
+
+### Netlify
+
+```bash
+npm run build
+# Déployez le dossier dist/
+```
+
+### Vercel
+
+```bash
+npm run build
+vercel --prod
+```
+
+### Serveur traditionnel
+
+1. Build le projet : `npm run build`
+2. Uploadez le contenu du dossier `dist/` sur votre serveur
+3. Configurez votre serveur pour rediriger toutes les routes vers `index.html`
+
+## 🔧 Scripts disponibles
+
+- `npm run dev` - Lance le serveur de développement
+- `npm run build` - Crée un build de production
+- `npm run preview` - Prévisualise le build de production
+- `npm run lint` - Vérifie le code avec ESLint
+
+## 📞 Support
+
+Pour toute question ou assistance :
+
+- Email : contact@skillijob.com
+- Téléphone : 09 70 19 67 02
+
+## 📝 Licence
+
+© 2025 Skillijob. Tous droits réservés.
+
+---
+
+## 🎨 Guide de contribution
+
+### Ajout d'une nouvelle page
+
+1. Créez un fichier dans `/src/pages/NouvelePage.jsx`
+2. Créez le fichier CSS correspondant `/src/pages/NouvelePage.css`
+3. Ajoutez la route dans `/src/App.jsx`
+
+### Ajout d'un nouveau composant
+
+1. Créez le fichier dans le bon dossier (`layout/`, `shared/`, etc.)
+2. Créez le fichier CSS correspondant
+3. Importez et utilisez le composant
+
+### Conventions de code
+
+- Utilisez des composants fonctionnels avec hooks
+- Suivez la convention de nommage PascalCase pour les composants
+- Utilisez des noms descriptifs pour les variables et fonctions
+- Commentez le code complexe
+
+## 🐛 Débogage
+
+### Le site ne démarre pas
+
+```bash
+# Supprimez node_modules et package-lock.json
+rm -rf node_modules package-lock.json
+# Réinstallez
+npm install
+```
+
+### Images ne s'affichent pas
+
+- Vérifiez que les images sont dans le dossier `/public/`
+- Vérifiez les chemins (doivent commencer par `/`)
+
+### Erreurs de build
+
+```bash
+# Nettoyez le cache
+npm run build -- --force
+```
+
+---
+
+**Développé avec ❤️ pour Skillijob**

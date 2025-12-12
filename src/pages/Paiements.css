@@ -1,0 +1,588 @@
+/* ===========================
+   PAIEMENTS PAGE STYLES
+   Inspiré de la page Skillijob
+   =========================== */
+
+.paiements-page {
+  min-height: 100vh;
+  background: #F8FAFC;
+}
+
+/* Hero Section avec dégradé violet */
+.paiements-hero {
+  background: linear-gradient(180deg, #6C00FF 0%, #6334AF 100%);
+  color: white;
+  padding: 4rem 0 5rem;
+  text-align: center;
+  position: relative;
+}
+
+.paiements-hero .hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.paiements-hero .hero-subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.938rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.delivery-badge svg {
+  color: #EAB308;
+}
+
+/* Section principale - Grid à 2 colonnes */
+.payment-content-section {
+  padding: 4rem 0;
+  position: relative;
+  margin-top: -3rem;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Colonne gauche - Détails du service */
+.service-details {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.service-details h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1.063rem;
+  color: #6B7280;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.service-features h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 1.5rem;
+}
+
+.features-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.features-checklist li svg {
+  color: #6C00FF;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.features-checklist li strong {
+  font-weight: 700;
+  color: #1F2937;
+}
+
+/* Badges de confiance */
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #F9FAFB;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  transition: all 0.3s ease;
+}
+
+.trust-badge:hover {
+  background: white;
+  border-color: #6C00FF;
+  box-shadow: 0 4px 12px rgba(108, 0, 255, 0.1);
+}
+
+.trust-badge svg {
+  color: #6C00FF;
+  flex-shrink: 0;
+}
+
+.trust-badge span {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Colonne droite - Carte de résumé */
+.payment-summary-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 2rem;
+  border: 2px solid #E5E7EB;
+}
+
+.summary-header {
+  background: linear-gradient(180deg, #6C00FF 0%, #6334AF 100%);
+  padding: 1.5rem 2rem;
+  border-radius: 14px 14px 0 0;
+}
+
+.summary-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.summary-content {
+  padding: 2rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.item-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.summary-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #E5E7EB, transparent);
+  margin: 1.5rem 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.total-label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #6C00FF;
+}
+
+.vat-notice {
+  font-size: 0.813rem;
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.validity-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #F9FAFB;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #E5E7EB;
+}
+
+.validity-info svg {
+  color: #6C00FF;
+  flex-shrink: 0;
+}
+
+.validity-info span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Checkboxes légales */
+.legal-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.938rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #6C00FF;
+  flex-shrink: 0;
+}
+
+.legal-link {
+  color: #6C00FF;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.legal-link:hover {
+  color: #8B5CF6;
+}
+
+/* Bouton de paiement */
+.unlock-button {
+  width: 100%;
+  padding: 1.125rem 2rem;
+  background: linear-gradient(135deg, #F59E0B 0%, #EAB308 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+  margin-bottom: 1rem;
+}
+
+.unlock-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.4);
+}
+
+.unlock-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.813rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+.security-note svg {
+  color: #6C00FF;
+}
+
+/* Section CTA - Voir les candidats */
+.cta-section {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #F8FAFC 0%, white 100%);
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1F2937;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.125rem;
+  color: #6B7280;
+  margin-bottom: 2rem;
+}
+
+/* Section Garantie */
+.guarantee-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.guarantee-box {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #F9FAFB 0%, white 100%);
+  border: 2px solid #6C00FF;
+  border-radius: 16px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 8px 24px rgba(108, 0, 255, 0.15);
+}
+
+.guarantee-icon {
+  background: linear-gradient(135deg, #6C00FF 0%, #8B5CF6 100%);
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guarantee-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 0.75rem;
+}
+
+.guarantee-content p {
+  font-size: 1rem;
+  color: #6B7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.guarantee-content strong {
+  color: #6C00FF;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .payment-summary-card {
+    position: static;
+  }
+
+  .trust-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .paiements-hero {
+    padding: 3rem 0 4rem;
+  }
+
+  .paiements-hero .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .paiements-hero .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .payment-content-section {
+    padding: 3rem 0;
+    margin-top: -2rem;
+  }
+
+  .service-details {
+    padding: 2rem;
+  }
+
+  .service-details h2 {
+    font-size: 1.75rem;
+  }
+
+  .summary-content {
+    padding: 1.5rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.875rem;
+  }
+
+  .guarantee-box {
+    padding: 2rem;
+  }
+
+  .guarantee-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .guarantee-content h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .paiements-hero {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .delivery-badge {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.813rem;
+  }
+
+  .paiements-hero .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .paiements-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-details {
+    padding: 1.5rem;
+  }
+
+  .service-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-description {
+    font-size: 0.938rem;
+  }
+
+  .features-checklist li {
+    font-size: 0.938rem;
+  }
+
+  .summary-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .summary-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .summary-content {
+    padding: 1.25rem;
+  }
+
+  .total-amount {
+    font-size: 1.75rem;
+  }
+
+  .unlock-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .cta-section,
+  .guarantee-section {
+    padding: 3rem 0;
+  }
+
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .guarantee-box {
+    padding: 1.5rem;
+  }
+
+  .guarantee-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .guarantee-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .guarantee-content h3 {
+    font-size: 1.125rem;
+  }
+
+  .guarantee-content p {
+    font-size: 0.938rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .paiements-hero .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .service-details h2 {
+    font-size: 1.25rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.375rem;
+  }
+}
